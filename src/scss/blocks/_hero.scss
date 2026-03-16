@@ -172,7 +172,7 @@
 
   &__partners {
     @include flex-center;
-    width: 100%;
+    width: calc(100% - var(--container-padding-x) * 2);
     height: rem(183);
     padding-inline: rem(44);
     background-color: var(--1);
@@ -263,17 +263,17 @@
 
     &__title {
       margin-top: rem(45);
-      font-size: fluid(25, 35);
+      font-size: fluid(25, 45);
       line-height: 120%;
     }
 
     &__description {
       margin-top: rem(20);
-      font-size: fluid(14, 18);
+      font-size: fluid(14, 22);
     }
 
     &__features {
-      width: fluid(360, 419);
+      width: fluid(360, 519);
       margin-top: rem(15);
       padding-left: rem(40);
       flex-direction: column;
@@ -281,12 +281,12 @@
 
       &-item {
         flex: 0 1 auto;
-        font-size: fluid(14, 18);
+        font-size: fluid(14, 22);
       }
     }
 
     &__action {
-      width: fluid(360, 485);
+      width: fluid(360, 610);
       margin-top: rem(44);
     }
 
@@ -305,11 +305,11 @@
         }
 
         b {
-          font-size: fluid(22, 30);
+          font-size: fluid(22, 38);
         }
 
         span {
-          font-size: fluid(14, 16);
+          font-size: fluid(14, 20);
         }
       }
     }
@@ -360,11 +360,15 @@
     &__container {
       padding-top: rem(120);
       flex-direction: column;
+      justify-content: start;
+      align-items: center;
       gap: rem(50);
     }
 
     &__text {
-      //   max-width: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
       &-line {
         display: none;
@@ -372,15 +376,14 @@
     }
 
     &__title {
+      max-width: rem(380);
       margin-top: 0;
       padding-left: 0;
-      //   font-size: fluid(25, 35);
     }
 
     &__description {
+      max-width: rem(360);
       padding-left: 0;
-      //   margin-top: rem(20);
-      //   font-size: fluid(14, 18);
     }
 
     &__features {
@@ -390,59 +393,83 @@
       gap: rem(10);
 
       &-item {
-        // font-size: fluid(14, 18);
+        align-items: center;
       }
     }
 
     &__action {
       width: fluid(335, 485);
+      height: rem(57);
       margin-top: rem(30);
     }
 
     &__cards {
-      gap: rem(34);
+      width: fluid(335, 485);
+      padding: rem(31) 0 rem(46) rem(127);
+      gap: rem(20);
       background-color: var(--4);
-      clip-path: polygon(25% 0%, 100% 0, 100% 76%, 81% 100%, 0 99%, 0 26%);
+      clip-path: polygon(10% 0%, 100% 0, 100% 75%, 90% 100%, 0 100%, 0 25%);
 
       &-item {
-        width: rem(280);
-        min-height: rem(144);
-        padding-left: rem(66);
-        gap: rem(10);
+        width: auto;
+        min-height: fit-content;
+        padding-left: 0;
+        gap: rem(4);
+        position: relative;
+
+        &:before {
+          content: "";
+          width: rem(30);
+          height: rem(30);
+          border-left: 7px solid var(--3);
+          border-bottom: 7px solid var(--3);
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          translate: -182% -17%;
+        }
+        &::after {
+          content: "";
+          width: rem(30);
+          height: rem(30);
+          border-left: 7px solid var(--3);
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          translate: -150% 5%;
+          rotate: 45deg;
+        }
 
         svg {
           display: none;
-        }
-
-        b {
-          //   font-size: rem(30);
-        }
-
-        span {
-          //   font-size: rem(16);
         }
       }
     }
 
     &__partners {
       //   width: calc(100% - var(--container-padding-x--tablet) * 2);
-      //   height: rem(138);
-      //   translate: 0 67%;
-      //   clip-path: polygon(3% 0%, 100% 0, 100% 68%, 97% 100%, 0 100%, 0 32%);
+      height: rem(107);
+      translate: 0 42%;
+      clip-path: polygon(8% 0%, 100% 0, 100% 58%, 92% 100%, 0 100%, 0 42%);
+      padding-inline: rem(24);
 
       .swiper-wrapper {
         // padding-top: rem(30);
         // align-items: start;
+        // gap: rem(30);
 
         .swiper-slide {
-          //   width: rem(132) !important;
-          //   height: rem(66) !important;
-          //   margin-right: rem(40) !important;
+          width: fluid(84, 500) !important;
+          height: rem(38) !important;
+          display: flex;
+          justify-content: center;
+          margin-right: rem(24) !important;
         }
       }
 
       .swiper-pagination {
-        // bottom: rem(15) !important;
+        bottom: rem(10) !important;
+        gap: rem(6);
       }
     }
   }

@@ -16,7 +16,6 @@ export class BgVideo {
         "canplay",
         () => {
           this.video.classList.add("hero__bg-video--loaded");
-          // video.removeAttribute("poster");
         },
         { once: true },
       );

@@ -1,5 +1,6 @@
 import "./scss/main.scss";
 import { BgVideo } from "./js/BgVideo";
+import { Header } from "./js/Header";
 import { Animation } from "./js/Animation";
 import Swiper from "swiper";
 import { Autoplay, Pagination } from "swiper/modules";
@@ -8,6 +9,8 @@ import "swiper/css/pagination";
 
 document.addEventListener("DOMContentLoaded", () => {
   new BgVideo();
+
+  new Header();
 
   new Animation();
 

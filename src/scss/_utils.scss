@@ -38,6 +38,9 @@
   }
 
   @include tablet {
+    &:hover {
+      background: var(--3);
+    }
     &:active {
       background: var(--9);
     }
@@ -45,6 +48,7 @@
 
   @include mobile {
     font-size: rem(12);
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
   }
 
   svg {
