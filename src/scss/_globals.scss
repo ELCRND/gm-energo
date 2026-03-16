@@ -1,0 +1,78 @@
+@use "helpers" as *;
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  // outline: 2px solid green;
+}
+
+html {
+  font-size: vw(16px);
+
+  @include tablet {
+    font-size: 16px;
+  }
+}
+
+body {
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family);
+  background: var(--8);
+  color: var(--2);
+  position: relative;
+}
+
+main {
+  flex-grow: 1;
+}
+
+h1,
+h2,
+h3,
+p,
+span,
+button,
+a {
+  letter-spacing: 0.008em;
+
+  @include tablet {
+    letter-spacing: 0em;
+  }
+}
+
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  color: inherit;
+
+  &[class] {
+    text-decoration: none;
+  }
+}
+
+:focus-visible {
+  outline: none;
+}
+
+img {
+  width: 100%;
+}
+
+.animated {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+[data-anim].visible {
+  opacity: 1 !important;
+  transform: translate(0, 0) !important;
+}

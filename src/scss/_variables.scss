@@ -1,0 +1,23 @@
+@use "helpers" as *;
+
+:root {
+  --1: #fff;
+  --2: #202020;
+  --3: #fdca27;
+  --4: #1172b9;
+  --5: #828282;
+  --6: #333;
+  --7: #50b5fd;
+  --8: #f7f7f7;
+  --9: #ffd654;
+
+  --font-family: "Geologica", sans-serif;
+  --second-family: "Unbounded", sans-serif;
+  --third-family: "Helvetica", sans-serif;
+
+  --container-width: #{rem(1440)};
+  --container-padding-x: #{rem(20)};
+  --container-padding-x--tablet: #{rem(50)};
+
+  --transition-duration: 0.2s;
+}

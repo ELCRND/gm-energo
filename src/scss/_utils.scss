@@ -1,0 +1,56 @@
+@use "helpers" as *;
+
+.u-container {
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+
+  @include tablet {
+    padding-inline: var(--container-padding-x--tablet);
+  }
+  @include tablet-s {
+    padding-inline: var(--container-padding-x);
+  }
+}
+
+.u-section-title {
+}
+
+.u-btn--regular {
+  @include flex-center;
+  background: var(--3);
+  display: flex;
+  align-items: center;
+  gap: rem(10);
+  font-family: var(--second-family);
+  font-weight: 500;
+  font-size: rem(16);
+  text-transform: uppercase;
+  line-height: 130%;
+  color: var(--2);
+  clip-path: polygon(9% 0%, 100% 0%, 92% 100%, 0% 100%);
+
+  &:hover {
+    background: var(--9);
+  }
+  &:active {
+    background: var(--3);
+  }
+
+  @include tablet {
+    &:active {
+      background: var(--9);
+    }
+  }
+
+  @include mobile {
+    font-size: rem(12);
+  }
+
+  svg {
+    width: rem(24);
+  }
+}
+
+.u-button-secondary {
+}
