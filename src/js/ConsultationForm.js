@@ -3,12 +3,12 @@ export class ConsultationForm {
     this.POPUP = document.querySelector("#consultation-popup");
     this.POPUP_OPEN = document.querySelector(".hero__action");
     this.SUCCESS_POPUP = document.querySelector("#success-popup");
-    this.FORM = document.querySelector(".consult-form");
+    this.FORM = document.querySelector(".popup__form");
 
     if (!this.FORM) return;
 
-    this.inputs = this.FORM.querySelectorAll(".field__input");
-    this.submitBtn = this.FORM.querySelector(".consult-form__submit");
+    this.INPUTS = this.FORM.querySelectorAll(".field__input");
+    this.SUBMIT_BTN = this.FORM.querySelector(".popup__submit");
 
     this.init();
   }
@@ -20,32 +20,28 @@ export class ConsultationForm {
   on() {
     this.POPUP_OPEN.addEventListener("click", () => this.open());
 
-    // Закрытие по крестику
-    document
-      .querySelectorAll(".popup__close, .success-popup__close")
-      .forEach((btn) => {
-        btn.addEventListener("click", () => this.closeAll());
-      });
+    // закрытие по крестику
+    document.querySelectorAll(".popup__close").forEach((btn) => {
+      btn.addEventListener("click", () => this.closeAll());
+    });
 
-    // Закрытие по оверлею
-    document
-      .querySelectorAll(".popup__overlay, .success-popup__overlay")
-      .forEach((overlay) => {
-        overlay.addEventListener("click", () => this.closeAll());
-      });
+    // закрытие по оверлею
+    document.querySelectorAll(".popup__overlay").forEach((overlay) => {
+      overlay.addEventListener("click", () => this.closeAll());
+    });
 
-    // Закрытие по Esc
+    // закрытие по Esc
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") this.closeAll();
     });
 
-    // Валидация при вводе
-    this.inputs.forEach((input) => {
+    // валидация при вводе
+    this.INPUTS.forEach((input) => {
       input.addEventListener("input", () => this.validateField(input));
       input.addEventListener("blur", () => this.validateField(input));
     });
 
-    // Отправка формы
+    // отправка формы
     this.FORM.addEventListener("submit", (e) => {
       e.preventDefault();
       this.handleSubmit();
@@ -66,6 +62,7 @@ export class ConsultationForm {
       const phoneRegex = /^[\d\s+()-]{7,18}$/;
       if (!phoneRegex.test(value)) {
         field.classList.add("field--error");
+        field.classList.remove("field--correct");
         return false;
       }
     }
@@ -80,7 +77,7 @@ export class ConsultationForm {
 
   validateForm() {
     let isValid = true;
-    this.inputs.forEach((input) => {
+    this.INPUTS.forEach((input) => {
       if (!this.validateField(input)) {
         isValid = false;
       }
@@ -93,15 +90,14 @@ export class ConsultationForm {
       return;
     }
 
-    this.submitBtn.disabled = true;
-    this.submitBtn.textContent = "Отправка...";
+    this.SUBMIT_BTN.disabled = true;
+    this.SUBMIT_BTN.textContent = "Отправка...";
 
-    // Здесь должна быть реальная отправка (fetch / axios)
-    // Имитация запроса
+    // имитация запроса
     setTimeout(() => {
       this.showSuccess();
       this.FORM.reset();
-      this.inputs.forEach((input) => {
+      this.INPUTS.forEach((input) => {
         input.closest(".field").classList.remove("field--error");
       });
     }, 1200);
@@ -110,8 +106,8 @@ export class ConsultationForm {
   showSuccess() {
     this.POPUP.classList.remove("popup--active");
     this.SUCCESS_POPUP.classList.add("popup--active");
-    this.submitBtn.disabled = false;
-    this.submitBtn.textContent = "Получить консультацию";
+    this.SUBMIT_BTN.disabled = false;
+    this.SUBMIT_BTN.textContent = "Получить консультацию";
   }
 
   closeAll() {

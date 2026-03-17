@@ -39,6 +39,10 @@
     margin-right: auto;
     padding: rem(20) rem(25);
     background-color: var(--4);
+
+    picture {
+      width: 100%;
+    }
   }
 
   &__menu {
@@ -173,12 +177,7 @@
 
   &__menu-open {
     width: rem(24);
-    // height: rem(18);
     margin-left: rem(46);
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: space-between;
-    // align-items: end;
     flex-shrink: 0;
     translate: rem(10) 0;
     position: relative;
@@ -213,6 +212,8 @@
     }
 
     svg {
+      width: 100%;
+
       line {
         transform-origin: center;
       }

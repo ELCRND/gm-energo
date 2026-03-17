@@ -310,16 +310,21 @@
 
       <!-- | image -->
       <picture class="popup__image">
+        <source media="(max-width:767px )" srcset="/images/popup/popup-image--mobile.webp">
+
         <img src="/images/popup/popup-image.webp" alt="" width="524" height="579" loading="lazy" decoding="async">
       </picture>
 
-      <!-- | form -->
-      <form class="consult-form " novalidate>
-        <div class="consult-form__header">
-          <div class="consult-form__title">Получите консультацию</div>
-        </div>
+      <div class="popup__header">
+        <h2 class="popup__title u-h2">Получите консультацию</h2>
+      </div>
 
-        <div class="consult-form__fields">
+      <!-- | form -->
+      <form class="popup__form" novalidate>
+
+
+        <div class="popup__fields">
+
           <div class="field field--name">
             <div class="field__wrapper">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="field__icon">
@@ -352,33 +357,42 @@
             </div>
             <div class="field__error">Укажите корректный номер телефона</div>
           </div>
+
         </div>
 
-        <button type="submit" class="consult-form__submit u-btn--regular">
+        <button type="submit" class="popup__submit u-btn--regular">
           Получить консультацию
         </button>
 
-        <div class="consult-form__policy">
+        <div class="popup__policy">
           Отправляя заявку я соглашаюсь с <a href="./#header" target="_blank">политикой конфиденциальности</a>
           компании в области обработки персональных данных
         </div>
+
+
       </form>
+
     </div>
   </div>
 
   <!-- success -->
-  <div class="success-popup" id="success-popup" style="opacity: 0;">
-    <div class="success-popup__overlay"></div>
-    <div class="success-popup__content">
-      <button class="success-popup__close" aria-label="Закрыть">×</button>
+  <div class="popup" id="success-popup" style="opacity: 0;">
+    <div class="popup__overlay"></div>
 
-      <div class="success-message">
-        <div class="success-message__title">Спасибо за заявку!</div>
-        <div class="success-message__text">
-          В ближайшее время с вами свяжется наш менеджер и ответит на все интересующие вас вопросы.
-        </div>
+    <div class="popup__content">
+      <button class="popup__close" aria-label="Закрыть" type="button"></button>
+
+      <div class="popup__header">
+        <h2 class="popup__title u-h2">Спасибо за&nbsp;заявку!</h2>
       </div>
+
+      <p class="popup__description">
+        В ближайшее время с вами свяжется наш менеджер и ответит на все
+        интересующие вас вопросы.
+      </p>
+
     </div>
+
   </div>
 
   <script type="module" src="/src/main.js"></script>
