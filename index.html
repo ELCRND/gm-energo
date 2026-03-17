@@ -11,6 +11,8 @@
   <link rel="preload" href="/fonts/Unbounded-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/Unbounded-Medium.woff2" as="font" type="font/woff2" crossorigin>
 
+
+
 </head>
 
 <body>
@@ -105,7 +107,12 @@
 
         <!-- menu btn -->
         <button type="button" class="header__menu-open" aria-label="Меню">
-          <span></span><span></span><span></span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+            stroke-linecap="round">
+            <line x1="3" y1="4" x2="22" y2="4" />
+            <line x1="10" y1="12" x2="22" y2="12" />
+            <line x1="3" y1="20" x2="22" y2="20" />
+          </svg>
         </button>
 
       </div>
@@ -113,7 +120,6 @@
   </header>
 
   <main>
-
 
     <!-- HERO -->
     <section class="hero">
@@ -288,9 +294,92 @@
       </div>
 
     </section>
+
+
+
   </main>
 
 
+
+  <!-- popup -->
+  <div class="popup popup--consultation" id="consultation-popup" style="opacity: 0;">
+    <div class="popup__overlay"></div>
+
+    <div class="popup__content">
+      <button class="popup__close" aria-label="Закрыть" type="button"></button>
+
+      <!-- | image -->
+      <picture class="popup__image">
+        <img src="/images/popup/popup-image.webp" alt="" width="524" height="579" loading="lazy" decoding="async">
+      </picture>
+
+      <!-- | form -->
+      <form class="consult-form " novalidate>
+        <div class="consult-form__header">
+          <div class="consult-form__title">Получите консультацию</div>
+        </div>
+
+        <div class="consult-form__fields">
+          <div class="field field--name">
+            <div class="field__wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="field__icon">
+                <path
+                  d="M12 13.5557C14.3722 13.5557 16.4711 14.0084 17.9395 14.6973C19.4872 15.4234 20 16.2289 20 16.7783C19.9998 17.4746 19.6205 18.2354 18.3896 18.877C17.1255 19.5358 15.0584 20 12 20C8.94161 20 6.87454 19.5358 5.61035 18.877C4.37952 18.2354 4.00016 17.4746 4 16.7783C4 16.2289 4.51284 15.4234 6.06055 14.6973C7.52885 14.0084 9.62782 13.5557 12 13.5557ZM12 4C13.484 4 14.8184 5.4463 14.8184 7.00977C14.8183 8.52535 13.5293 9.875 12 9.875C10.4707 9.875 9.1817 8.52535 9.18164 7.00977C9.18164 5.4463 10.516 4 12 4Z"
+                  stroke="#828282" stroke-width="2" />
+              </svg>
+              <input type="text" id="name" name="name" class="field__input" placeholder="Ваше имя" required
+                autocomplete="additional-name">
+            </div>
+            <div class="field__error">Поле обязательно для заполнения</div>
+          </div>
+
+          <div class="field field--phone">
+            <div class="field__wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="field__icon">
+                <g clip-path="url(#clip0_139_594)">
+                  <path
+                    d="M5 4H9L11 9L8.5 10.5C9.57096 12.6715 11.3285 14.429 13.5 15.5L15 13L20 15V19C20 19.5304 19.7893 20.0391 19.4142 20.4142C19.0391 20.7893 18.5304 21 18 21C14.0993 20.763 10.4202 19.1065 7.65683 16.3432C4.8935 13.5798 3.23705 9.90074 3 6C3 5.46957 3.21071 4.96086 3.58579 4.58579C3.96086 4.21071 4.46957 4 5 4"
+                    stroke="#828282" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_139_594">
+                    <rect width="24" height="24" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <input type="tel" id="phone" name="phone" class="field__input" placeholder="Ваш телефон" required
+                autocomplete="tel">
+            </div>
+            <div class="field__error">Укажите корректный номер телефона</div>
+          </div>
+        </div>
+
+        <button type="submit" class="consult-form__submit u-btn--regular">
+          Получить консультацию
+        </button>
+
+        <div class="consult-form__policy">
+          Отправляя заявку я соглашаюсь с <a href="./#header" target="_blank">политикой конфиденциальности</a>
+          компании в области обработки персональных данных
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- success -->
+  <div class="success-popup" id="success-popup" style="opacity: 0;">
+    <div class="success-popup__overlay"></div>
+    <div class="success-popup__content">
+      <button class="success-popup__close" aria-label="Закрыть">×</button>
+
+      <div class="success-message">
+        <div class="success-message__title">Спасибо за заявку!</div>
+        <div class="success-message__text">
+          В ближайшее время с вами свяжется наш менеджер и ответит на все интересующие вас вопросы.
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script type="module" src="/src/main.js"></script>
 </body>

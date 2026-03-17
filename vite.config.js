@@ -28,24 +28,24 @@ export default defineConfig({
         // Имена файлов без хешей для простоты
         entryFileNames: "assets/[name].js",
         chunkFileNames: "assets/[name].js",
-        assetFileNames: (assetInfo) => {
-          const info = assetInfo.name.split(".");
-          const ext = info[info.length - 1];
+        // assetFileNames: (assetInfo) => {
+        //   const info = assetInfo.name.split(".");
+        //   const ext = info[info.length - 1];
 
-          if (/\.(css|scss)$/.test(assetInfo.name)) {
-            return "assets/[name].[ext]";
-          }
+        //   if (/\.(css|scss)$/.test(assetInfo.name)) {
+        //     return "assets/[name].[ext]";
+        //   }
 
-          if (/\.(gif|jpe?g|png|svg|webp|avif)$/.test(assetInfo.name)) {
-            return "assets/images/[name].[ext]";
-          }
+        //   if (/\.(gif|jpe?g|png|svg|webp|avif)$/.test(assetInfo.name)) {
+        //     return "assets/images/[name].[ext]";
+        //   }
 
-          if (/\.(woff2?|eot|ttf|otf)$/.test(assetInfo.name)) {
-            return "assets/fonts/[name].[ext]";
-          }
+        //   if (/\.(woff2?|eot|ttf|otf)$/.test(assetInfo.name)) {
+        //     return "assets/fonts/[name].[ext]";
+        //   }
 
-          return "assets/[name].[ext]";
-        },
+        //   return "assets/[name].[ext]";
+        // },
       },
     },
 
