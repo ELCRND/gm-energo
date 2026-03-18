@@ -20,6 +20,13 @@ export class ConsultationForm {
   on() {
     this.POPUP_OPEN.addEventListener("click", () => this.open());
 
+    // открыть
+    document
+      .querySelectorAll(".hero__action, .equipment__action")
+      .forEach((btn) => {
+        btn.addEventListener("click", () => this.open());
+      });
+
     // закрытие по крестику
     document.querySelectorAll(".popup__close").forEach((btn) => {
       btn.addEventListener("click", () => this.closeAll());

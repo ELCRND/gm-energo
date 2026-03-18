@@ -18,12 +18,13 @@ body {
   display: flex;
   flex-direction: column;
   font-family: var(--font-family);
-  background: var(--8);
+  background: var(--1);
   color: var(--2);
   position: relative;
 }
 
 main {
+  overflow-x: hidden;
   flex-grow: 1;
 }
 

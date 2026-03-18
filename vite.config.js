@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import { resolve } from "path";
+import PluginCritical from "rollup-plugin-critical";
 
 // npm install -D sass autoprefixer postcss postcss-preset-env cssnano sharp
 
@@ -17,6 +18,7 @@ export default defineConfig({
   build: {
     // Выходная директория
     outDir: "dist",
+    cssCodeSplit: false,
 
     // Оптимизация chunk'ов
     rollupOptions: {
@@ -63,7 +65,28 @@ export default defineConfig({
 
   // Плагины
   plugins: [
-    // Vite автоматически обрабатывает SCSS через встроенные возможности
+    PluginCritical({
+      criticalUrl: "http://localhost:4173/",
+      criticalBase: "./dist/",
+
+      criticalPages: [
+        {
+          uri: "", // главная страница
+          template: "index", // имя без .html
+        },
+      ],
+
+      criticalConfig: {
+        inline: true,
+        extract: true,
+        width: 1920,
+        height: 1080,
+        penthouse: {
+          timeout: 60000,
+          blockJSRequests: false,
+        },
+      },
+    }),
   ],
 
   // CSS препроцессинг

@@ -132,9 +132,9 @@
     gap: rem(26);
 
     &-item {
-      width: rem(345);
+      width: rem(335);
       min-height: rem(179);
-      padding-left: rem(100);
+      padding-left: rem(90);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -143,9 +143,10 @@
 
       svg {
         width: 100%;
+        height: 100%;
         position: absolute;
         top: 0;
-        left: rem(12);
+        left: 0;
       }
 
       b {

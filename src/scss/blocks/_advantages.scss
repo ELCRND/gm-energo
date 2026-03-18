@@ -1,0 +1,169 @@
+@use "../helpers" as *;
+
+.advantages {
+  padding-top: rem(152);
+
+  &__container {
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: rem(67);
+  }
+
+  &__title {
+    flex: 0 0 rem(327);
+    color: var(--4);
+    margin-right: auto;
+  }
+
+  &__list {
+    display: contents;
+  }
+}
+
+.advantages-item {
+  flex: 0 0 rem(480);
+  display: grid;
+
+  &__image {
+    @include flex-center;
+    grid-column: 1 / 2;
+    width: rem(158);
+    height: rem(100);
+    background-color: var(--4);
+    clip-path: polygon(38% 0%, 100% 0%, 62% 100%, 0% 100%);
+
+    img {
+      width: rem(50);
+    }
+  }
+
+  &__title {
+    grid-column: 2 / 3;
+    max-width: rem(300);
+    margin-top: rem(24);
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: rem(24);
+    line-height: 130%;
+    color: var(--2);
+
+    &::first-letter {
+      padding-left: rem(18);
+    }
+  }
+
+  &__description {
+    grid-column: 2 / 3;
+    margin-top: rem(10);
+    font-weight: 300;
+    font-size: rem(18);
+    line-height: 130%;
+    color: var(--2);
+  }
+}
+
+@include tablet {
+  .advantages {
+    padding-top: rem(100);
+
+    &__content {
+      row-gap: rem(28);
+      column-gap: rem(56);
+      justify-content: center;
+    }
+
+    &__title {
+      flex: 0 0 fluid(150, 350);
+      margin-right: 0;
+    }
+  }
+
+  .advantages-item {
+    flex: 0 0 fluid(150, 350);
+
+    &__image {
+      width: rem(125);
+      height: rem(78);
+
+      img {
+        width: rem(35);
+      }
+    }
+
+    &__title {
+      grid-column: 1 / 2;
+      max-width: rem(220);
+      margin-top: rem(15);
+      font-size: rem(18);
+
+      &::first-letter {
+        padding-left: 0;
+      }
+    }
+
+    &__description {
+      grid-column: 1 / 2;
+      margin-top: rem(8);
+      font-size: rem(14);
+    }
+  }
+}
+
+@include mobile {
+  .advantages {
+    padding-top: rem(50);
+
+    &__content {
+      flex-direction: column;
+      align-items: center;
+      gap: rem(20) 0;
+    }
+
+    &__title {
+      flex: 0 0 auto;
+      max-width: rem(298);
+      padding-left: rem(18);
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: rem(23);
+    }
+  }
+
+  .advantages-item {
+    flex: 0 0 auto;
+    margin-inline: auto;
+    grid-template-columns: auto 1fr;
+
+    &:first-of-type {
+      .advantages-item__description {
+        max-width: rem(330);
+      }
+    }
+
+    &__image {
+      width: rem(100);
+      height: rem(62);
+    }
+
+    &__title {
+      grid-column: 2 / 3;
+      max-width: rem(180);
+      margin-top: rem(24);
+      font-size: rem(14);
+    }
+
+    &__description {
+      grid-column: 1 / 3;
+      max-width: rem(400);
+      margin-top: rem(16);
+    }
+  }
+}

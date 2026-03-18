@@ -65,7 +65,7 @@ export class Animation {
       this.handleIntersection.bind(this),
       {
         root: null,
-        threshold: 0.35,
+        threshold: 0.55,
         rootMargin: "80px 0px",
       },
     );

@@ -3,15 +3,12 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>gm-energo</title>
   <link rel="icon" href="/images/common/logo--mobile.svg" type="image/svg+xml">
 
   <link rel="preload" href="/fonts/Unbounded-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/Unbounded-Medium.woff2" as="font" type="font/woff2" crossorigin>
-
-
 
 </head>
 
@@ -36,6 +33,13 @@
         d="M20 0C31.0457 0 40 8.95431 40 20C40 31.0457 31.0457 40 20 40C8.95431 40 0 31.0457 0 20C0 8.95431 8.95431 0 20 0ZM27.7344 12.5C27.0417 12.5124 25.9787 12.8819 20.8652 15.0088C19.074 15.7538 15.4937 17.2967 10.125 19.6357C9.25323 19.9824 8.79646 20.3217 8.75488 20.6533C8.67558 21.2896 9.59209 21.4875 10.7451 21.8623C11.6853 22.1679 12.9498 22.5257 13.6074 22.54C14.2038 22.5529 14.8697 22.3072 15.6045 21.8027C20.6206 18.4167 23.2105 16.7049 23.373 16.668C23.4877 16.642 23.6463 16.6095 23.7539 16.7051C23.8614 16.8006 23.8512 16.9813 23.8398 17.0303C23.7486 17.4191 19.0368 21.7056 18.7656 21.9873C17.7294 23.0635 16.5509 23.7217 18.3691 24.9199C19.9423 25.9566 20.8578 26.6183 22.4785 27.6807C23.5143 28.3597 24.327 29.1648 25.3965 29.0664C25.8884 29.0209 26.3962 28.5581 26.6543 27.1787C27.2644 23.9173 28.464 16.8507 28.7412 13.9385C28.7655 13.6833 28.7345 13.3562 28.71 13.2129C28.6854 13.0696 28.6342 12.8659 28.4482 12.7148C28.2276 12.5358 27.8867 12.4974 27.7344 12.5Z"
         fill="inherit" />
     </symbol>
+
+
+    <symbol id="sprite__arrow-right">
+      <path d="M12.8333 7.625L17 12M17 12L12.8333 16.375M17 12L7 12" stroke="inherit" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+
 
 
 
@@ -135,13 +139,8 @@
         </picture>
 
         <!-- | video -->
-        <video class="hero__bg-video" autoplay loop muted playsinline preload="none" poster="/images/hero/hero-bg.webp"
-          loading="lazy">
-
-          <!-- || mobile -->
-          <source src="/images/hero/hero-bg--mobile.webm" media="(max-width: 767px)" type="video/webm">
-          <!-- || desktop -->
-          <source src="/images/hero/hero-bg.webm" type="video/webm">
+        <video class="hero__bg-video" autoplay loop muted playsinline preload="none" aria-hidden="true"
+          data-src="/images/hero/hero-bg.webm" data-src-mobile="/images/hero/hero-bg--mobile.webm">
         </video>
 
       </div>
@@ -192,9 +191,8 @@
           <div data-anim="fade-down" data-delay="0.8s">
             <button type="button" class="hero__action u-btn--regular">
               <span>Получить консультацию</span>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M12.8333 7.625L17 12M17 12L12.8333 16.375M17 12L7 12" stroke="#202020" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round" />
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#202020" aria-hidden="true">
+                <use href="#sprite__arrow-right"></use>
               </svg>
             </button>
           </div>
@@ -296,6 +294,662 @@
     </section>
 
 
+    <!-- COMPLEX -->
+    <section class="complex">
+      <div class="complex__container u-container">
+
+        <h2 class="complex__title u-h2">
+          Не просто аренда оборудования -
+          а&nbsp;комплексное решение
+        </h2>
+        <p class="complex__subtitle">
+          Мы берём на себя весь цикл работ по энергообеспечению и полностью отвечаем за результат
+        </p>
+
+
+        <ol class="complex__steps">
+
+          <!-- 1 -->
+          <li class="complex__step">
+            <picture class="complex__step-image" data-anim="fade-up" data-delay="0.2s">
+              <source media="(max-width:767px)" srcset="/images/complex/complex-1--mobile.webp">
+
+              <img src="/images/complex/complex-1.webp" width="710" height="269" alt="Анализ площадки и расчёт нагрузки"
+                loading="lazy" decoding="async" draggable="false">
+            </picture>
+            <div class="complex__step-content">
+              <h3 class="complex__step-title u-h3" data-anim="fade-up" data-delay="0.3s">Анализ площадки и расчёт
+                нагрузки
+              </h3>
+              <p class="complex__step-description" data-anim="fade-up" data-delay="0.4s">
+                Дательно изучаем формат мероприятия, особенности площадки, предполагаемое оборудование и нагрузки
+              </p>
+            </div>
+          </li>
+
+          <!-- 2 -->
+          <li class="complex__step">
+            <picture class="complex__step-image" data-anim="fade-up" data-delay="0.2s">
+              <source media="(max-width:767px)" srcset="/images/complex/complex-2--mobile.webp">
+
+              <img src="/images/complex/complex-2.webp" width="710" height="269"
+                alt="Проектирование схемы энергоснабжения" loading="lazy" decoding="async" draggable="false">
+            </picture>
+            <div class="complex__step-content">
+              <h3 class="complex__step-title u-h3" data-anim="fade-up" data-delay="0.3s">Проектирование схемы
+                энергоснабжения
+              </h3>
+              <p class="complex__step-description" data-anim="fade-up" data-delay="0.4s">
+                Определяем расположение генераторов, маршруты кабельных линий, точки подключения и распределение
+                нагрузки между зонами. Всё продумывается заранее — чтобы на площадке не возникало импровизации и
+                технических рисков
+              </p>
+            </div>
+          </li>
+
+          <!-- 3 -->
+          <li class="complex__step">
+            <picture class="complex__step-image" data-anim="fade-up" data-delay="0.2s">
+              <source media="(max-width:767px)" srcset="/images/complex/complex-3--mobile.webp">
+
+              <img src="/images/complex/complex-3.webp" width="710" height="269" alt="Подбор и доставка оборудования"
+                loading="lazy" decoding="async" draggable="false">
+            </picture>
+            <div class="complex__step-content">
+              <h3 class="complex__step-title u-h3" data-anim="fade-up" data-delay="0.3s">Подбор и доставка оборудования
+              </h3>
+              <p class="complex__step-description" data-anim="fade-up" data-delay="0.4s">
+                Подберем оборудование под задачи проекта: генераторы, щиты, кабель, независимо от региона и сложности
+                локации. Мы работаем по всей России и организуем логистику так, чтобы техника была готова к монтажу
+                точно в срок.
+              </p>
+            </div>
+          </li>
+
+          <!-- 4 -->
+          <li class="complex__step">
+            <picture class="complex__step-image" data-anim="fade-up" data-delay="0.2s">
+              <source media="(max-width:767px)" srcset="/images/complex/complex-4--mobile.webp">
+
+              <img src="/images/complex/complex-4.webp" width="710" height="269"
+                alt="Монтаж оборудования и тестирование" loading="lazy" decoding="async" draggable="false">
+            </picture>
+            <div class="complex__step-content">
+              <h3 class="complex__step-title u-h3" data-anim="fade-up" data-delay="0.3s">Монтаж оборудования и
+                тестирование
+              </h3>
+              <p class="complex__step-description" data-anim="fade-up" data-delay="0.4s">
+                Инженерная команда выполняет установку системы, проводит подключение и тестирование. До старта мы
+                запустим оборудование в рабочем режиме и проверим стабильность всей цепочки — от источника питания до
+                конечных точек потребления
+              </p>
+            </div>
+          </li>
+
+          <!-- 5 -->
+          <li class="complex__step">
+            <picture class="complex__step-image" data-anim="fade-up" data-delay="0.2s">
+              <source media="(max-width:767px)" srcset="/images/complex/complex-5--mobile.webp">
+
+              <img src="/images/complex/complex-5.webp" width="710" height="269"
+                alt="Круглосуточное техническое сопровождение" loading="lazy" decoding="async" draggable="false">
+            </picture>
+            <div class="complex__step-content">
+              <h3 class="complex__step-title u-h3" data-anim="fade-up" data-delay="0.3s">Круглосуточное техническое
+                сопровождение в течение всего мероприятия</h3>
+              <p class="complex__step-description" data-anim="fade-up" data-delay="0.4s">
+                Специалисты на площадке контролируют систему и нагрузку в реальном времени, оперативно реагируют на
+                изменения и при необходимости подключают резервы. Заказчик занимается гостями и программой — технику
+                берем на себя.
+              </p>
+            </div>
+          </li>
+
+          <!-- 6 -->
+          <li class="complex__step">
+            <picture class="complex__step-image" data-anim="fade-up" data-delay="0.2s">
+              <source media="(max-width:767px)" srcset="/images/complex/complex-6--mobile.webp">
+
+              <img src="/images/complex/complex-6.webp" width="710" height="269" alt="Демонтаж и вывоз оборудования"
+                loading="lazy" decoding="async" draggable="false">
+            </picture>
+            <div class="complex__step-content">
+              <h3 class="complex__step-title u-h3" data-anim="fade-up" data-delay="0.3s">Демонтаж и вывоз оборудования
+              </h3>
+              <p class="complex__step-description" data-anim="fade-up" data-delay="0.4s">
+                Аккуратно демонтируем оборудование и вывозим его с площадки, обеспечивая корректное и безопасное
+                завершение проект
+              </p>
+            </div>
+          </li>
+
+        </ol>
+
+      </div>
+    </section>
+
+
+    <!-- EQUIPMENT -->
+    <section class="equipment">
+
+      <!-- bg -->
+      <picture class="equipment__bg">
+        <source media="(max-width:767px )" srcset="/images/equipment/equipment-image--mobile.webp">
+
+        <img src="/images/equipment/equipment-image.webp" alt="" width="1920" height="1008" loading="lazy"
+          decoding="async" draggable="false">
+      </picture>
+
+      <div class="equipment__container u-container">
+        <div class="equipment__content">
+
+          <h2 class="equipment__title u-h2" data-anim="fade-up" data-delay="0.2s">
+            Оборудование
+          </h2>
+          <h3 class="equipment__subtitle u-h3" data-anim="fade-up" data-delay="0.3s">
+            Надежность и безопасность - это то, что мы гарантируем нашим клиентам на каждом этапе нашего сотрудничества
+          </h3>
+          <p class="equipment__description" data-anim="fade-up" data-delay="0.4s">
+            Объединяем обученных и талантливых специалистов и&nbsp;большой парк проверенного и обслуженного оборудования
+            для
+            успешной реализации проектов любой сложности
+          </p>
+
+          <ul class="equipment__list" data-anim="fade-in" data-delay="0.5s">
+            <!-- 1 -->
+            <li class="equipment__list-item">
+              <b>500+</b>
+              Силовых <br>щитов
+            </li>
+            <!-- 2 -->
+            <li class="equipment__list-item">
+              <b>66</b>
+              Дизель-генераторные установки установок
+            </li>
+            <!-- 3 -->
+            <li class="equipment__list-item">
+              <b>5100</b>
+              <span>Кабель-каналов</span>
+            </li>
+            <!-- 4 -->
+            <li class="equipment__list-item">
+              <b>115 <span>км</span></b>
+              Кабеля
+            </li>
+          </ul>
+
+          <button type="button" class="equipment__action u-btn--regular" data-anim="fade-up" data-delay="0.6s">
+            <span>Получить консультацию</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#202020" aria-hidden="true">
+              <use href="#sprite__arrow-right"></use>
+            </svg>
+          </button>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- EVENTS -->
+    <section class="events" id="events">
+      <div class="events__container u-container">
+
+        <h2 class="events__title u-h2" data-anim="fade-up" data-delay="0.2s">
+          Работаем с мероприятиями любого масштаба по&nbsp;всей России
+        </h2>
+        <p class="events__subtitle" data-anim="fade-up" data-delay="0.3s">
+          Организуем логистику, доставку техники и выезд инженерной команды на площадку — независимо от ее удаленности и
+          сложности
+        </p>
+
+        <ul class="events__list">
+          <!-- 1 -->
+          <li class="events-item" data-anim="fade-up" data-delay="0.2s">
+
+            <picture class="events-item__image">
+              <img src="images/events/events-1.webp" alt="Государственные проекты" width="467" height="229"
+                loading="lazy" decoding="async" draggable="false">
+            </picture>
+
+            <div class="events-item__top">
+              <h3 class="events-item__title u-h3">Государственные проекты</h3>
+              <img src="images/common/icon-arrow.svg" alt="" class="events-item__arrow" width="36" height="36"
+                loading="lazy" decoding="async" draggable="false" aria-hidden="true">
+            </div>
+
+            <div class="events-item__bottom">
+              <p class="events-item__description">57 реализованных проектов в данной сфере</p>
+              <a href="./#events" class="events-item__link u-btn--regular">
+                <span>Смотреть проекты</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#202020" aria-hidden="true">
+                  <use href="#sprite__arrow-right"></use>
+                </svg>
+              </a>
+            </div>
+
+          </li>
+          <!-- 2 -->
+          <li class="events-item" data-anim="fade-up" data-delay="0.3s">
+
+            <picture class="events-item__image">
+              <img src="images/events/events-2.webp" alt="Спортивные события" width="467" height="229" loading="lazy"
+                decoding="async" draggable="false">
+            </picture>
+
+            <div class="events-item__top">
+              <h3 class="events-item__title u-h3">Спортивные события</h3>
+              <img src="images/common/icon-arrow.svg" alt="" class="events-item__arrow" width="36" height="36"
+                loading="lazy" decoding="async" draggable="false" aria-hidden="true">
+            </div>
+
+            <div class="events-item__bottom">
+              <p class="events-item__description">57 реализованных проектов в данной сфере</p>
+              <a href="./#events" class="events-item__link u-btn--regular">
+                <span>Смотреть проекты</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#202020" aria-hidden="true">
+                  <use href="#sprite__arrow-right"></use>
+                </svg>
+              </a>
+            </div>
+
+          </li>
+          <!-- 3 -->
+          <li class="events-item" data-anim="fade-up" data-delay="0.4s">
+
+            <picture class="events-item__image">
+              <img src="images/events/events-3.webp" alt="Фестивали и концерты" width="467" height="229" loading="lazy"
+                decoding="async" draggable="false">
+            </picture>
+
+            <div class="events-item__top">
+              <h3 class="events-item__title u-h3">Фестивали и&nbsp;концерты</h3>
+              <img src="images/common/icon-arrow.svg" alt="" class="events-item__arrow" width="36" height="36"
+                loading="lazy" decoding="async" draggable="false" aria-hidden="true">
+            </div>
+
+            <div class="events-item__bottom">
+              <p class="events-item__description">57 реализованных проектов в данной сфере</p>
+              <a href="./#events" class="events-item__link u-btn--regular">
+                <span>Смотреть проекты</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#202020" aria-hidden="true">
+                  <use href="#sprite__arrow-right"></use>
+                </svg>
+              </a>
+            </div>
+
+          </li>
+          <!-- 4 -->
+          <li class="events-item" data-anim="fade-up" data-delay="0.2s">
+
+            <picture class="events-item__image">
+              <img src="images/events/events-4.webp" alt="Корпоративные события" width="467" height="229" loading="lazy"
+                decoding="async" draggable="false">
+            </picture>
+
+            <div class="events-item__top">
+              <h3 class="events-item__title u-h3">Корпоративные события</h3>
+              <img src="images/common/icon-arrow.svg" alt="" class="events-item__arrow" width="36" height="36"
+                loading="lazy" decoding="async" draggable="false" aria-hidden="true">
+            </div>
+
+            <div class="events-item__bottom">
+              <p class="events-item__description">57 реализованных проектов в данной сфере</p>
+              <a href="./#events" class="events-item__link u-btn--regular">
+                <span>Смотреть проекты</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#202020" aria-hidden="true">
+                  <use href="#sprite__arrow-right"></use>
+                </svg>
+              </a>
+            </div>
+
+          </li>
+          <!-- 5 -->
+          <li class="events-item" data-anim="fade-up" data-delay="0.3s">
+
+            <picture class="events-item__image">
+              <img src="images/events/events-5.webp" alt="Камерные частные мероприятия" width="467" height="229"
+                loading="lazy" decoding="async" draggable="false">
+            </picture>
+
+            <div class="events-item__top">
+              <h3 class="events-item__title u-h3">Камерные частные мероприятия</h3>
+              <img src="images/common/icon-arrow.svg" alt="" class="events-item__arrow" width="36" height="36"
+                loading="lazy" decoding="async" draggable="false" aria-hidden="true">
+            </div>
+
+            <div class="events-item__bottom">
+              <p class="events-item__description">57 реализованных проектов в данной сфере</p>
+              <a href="./#events" class="events-item__link u-btn--regular">
+                <span>Смотреть проекты</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#202020" aria-hidden="true">
+                  <use href="#sprite__arrow-right"></use>
+                </svg>
+              </a>
+            </div>
+
+          </li>
+          <!-- 6 -->
+          <li class="events-item" data-anim="fade-up" data-delay="0.4s">
+
+            <picture class="events-item__image">
+              <img src="images/events/events-6.webp" alt="Курортные и гостиничные комплексы" width="467" height="229"
+                loading="lazy" decoding="async" draggable="false">
+            </picture>
+
+            <div class="events-item__top">
+              <h3 class="events-item__title u-h3">Курортные и гостиничные комплексы</h3>
+              <img src="images/common/icon-arrow.svg" alt="" class="events-item__arrow" width="36" height="36"
+                loading="lazy" decoding="async" draggable="false" aria-hidden="true">
+            </div>
+
+            <div class="events-item__bottom">
+              <p class="events-item__description">
+                57 реализованных проектов в данной сфере
+              </p>
+              <a href="./#events" class="events-item__link u-btn--regular">
+                <span>Смотреть проекты</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#202020" aria-hidden="true">
+                  <use href="#sprite__arrow-right"></use>
+                </svg>
+              </a>
+            </div>
+
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section class="projects" id="projects">
+      <div class="projects__container u-container">
+        <h2 class="projects__title u-h2" data-anim="fade-up" data-delay="0.2s">
+          Нам доверяют крупные проекты федерального уровня
+        </h2>
+
+        <div class="projects__slider">
+
+          <ul class="projects__list swiper-wrapper" style="--total:3">
+
+            <!-- 1 -->
+            <li class="projects__list-item swiper-slide">
+              <!-- card -->
+              <article class="projects-item">
+                <!-- | img -->
+                <picture class="projects-item__image">
+                  <source media="(max-width:767px)" srcset="/images/projects/projects-2--mobile.webp">
+
+                  <img src="/images/projects/projects-2.webp" alt="" width="1775" height="1160" loading="lazy"
+                    decoding="async" draggable="false">
+                </picture>
+
+                <!-- | text -->
+                <div class="projects-item__content">
+                  <h3 class="projects-item__title" data-anim="fade-up" data-delay="0.2s">
+                    «ИТОГИ ГОДА 2025» С&nbsp;Владимиром Путиным
+                  </h3>
+                  <h4 class="projects-item__subtitle" data-anim="fade-up" data-delay="0.2s">
+                    <img src="/images/common/icon-arrow.svg" alt="" width="36" height="36" loading="lazy"
+                      decoding="async" draggable="false" aria-hidden="true">
+                    <span>ГМ-ЭНЕРГО предоставила:</span>
+                  </h4>
+                  <ul class="projects-item__list">
+                    <li class="projects-item__list-item" data-anim="fade-up" data-delay="0.4s">
+                      <img src="/images/projects/icons/generator.svg" alt="" width="35" height="35" loading="lazy"
+                        decoding="async" draggable="false" aria-hidden="true">
+                      <span>3 ДГУ, включая 1 пару генераторов синхронизированных</span>
+                    </li>
+                    <li class="projects-item__list-item" data-anim="fade-up" data-delay="0.5s">
+                      <img src="/images/projects/icons/lighting.svg" alt="" width="35" height="35" loading="lazy"
+                        decoding="async" draggable="false" aria-hidden="true">
+                      <span>Общей <br>мощностью 900 кВт</span>
+                    </li>
+                    <li class="projects-item__list-item" data-anim="fade-up" data-delay="0.6s">
+                      <img src="/images/projects/icons/cable.svg" alt="" width="35" height="35" loading="lazy"
+                        decoding="async" draggable="false" aria-hidden="true">
+                      <span>Всё необходимое энергооборудование</span>
+                    </li>
+                  </ul>
+
+                  <div data-anim="fade-up" data-delay="0.6s">
+                    <a href="./#projects" class="projects-item__link u-btn--regular" data-anim="fade-up"
+                      data-delay="0.6s">
+                      <span>Подробнее</span>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#202020" aria-hidden="true">
+                        <use href="#sprite__arrow-right"></use>
+                      </svg>
+                    </a>
+                  </div>
+
+                  <div class="projects-item__counter"></div>
+                </div>
+
+              </article>
+            </li>
+            <!-- 2 -->
+            <li class="projects__list-item swiper-slide">
+              <!-- card -->
+              <article class="projects-item">
+                <!-- | img -->
+                <picture class="projects-item__image">
+                  <source media="(max-width:767px)" srcset="/images/projects/projects-2--mobile.webp">
+
+                  <img src="/images/projects/projects-2.webp" alt="" width="1775" height="1160" loading="lazy"
+                    decoding="async" draggable="false">
+                </picture>
+
+                <!-- | text -->
+                <div class="projects-item__content">
+                  <h3 class="projects-item__title" data-anim="fade-up" data-delay="0.2s">
+                    «ИТОГИ ГОДА 2025» С&nbsp;Владимиром Путиным
+                  </h3>
+                  <h4 class="projects-item__subtitle" data-anim="fade-up" data-delay="0.2s">
+                    <img src="/images/common/icon-arrow.svg" alt="" width="36" height="36" loading="lazy"
+                      decoding="async" draggable="false" aria-hidden="true">
+                    <span>ГМ-ЭНЕРГО предоставила:</span>
+                  </h4>
+                  <ul class="projects-item__list">
+                    <li class="projects-item__list-item" data-anim="fade-up" data-delay="0.4s">
+                      <img src="/images/projects/icons/generator.svg" alt="" width="35" height="35" loading="lazy"
+                        decoding="async" draggable="false" aria-hidden="true">
+                      <span>3 ДГУ, включая 1 пару генераторов синхронизированных</span>
+                    </li>
+                    <li class="projects-item__list-item" data-anim="fade-up" data-delay="0.5s">
+                      <img src="/images/projects/icons/lighting.svg" alt="" width="35" height="35" loading="lazy"
+                        decoding="async" draggable="false" aria-hidden="true">
+                      <span>Общей <br>мощностью 900 кВт</span>
+                    </li>
+                    <li class="projects-item__list-item" data-anim="fade-up" data-delay="0.6s">
+                      <img src="/images/projects/icons/cable.svg" alt="" width="35" height="35" loading="lazy"
+                        decoding="async" draggable="false" aria-hidden="true">
+                      <span>Всё необходимое энергооборудование</span>
+                    </li>
+                  </ul>
+
+                  <div data-anim="fade-up" data-delay="0.6s">
+                    <a href="./#projects" class="projects-item__link u-btn--regular" data-anim="fade-up"
+                      data-delay="0.6s">
+                      <span>Подробнее</span>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#202020" aria-hidden="true">
+                        <use href="#sprite__arrow-right"></use>
+                      </svg>
+                    </a>
+                  </div>
+
+                  <div class="projects-item__counter"></div>
+                </div>
+
+              </article>
+            </li>
+            <!-- 3 -->
+            <li class="projects__list-item swiper-slide">
+              <!-- card -->
+              <article class="projects-item">
+                <!-- | img -->
+                <picture class="projects-item__image">
+                  <source media="(max-width:767px)" srcset="/images/projects/projects-2--mobile.webp">
+
+                  <img src="/images/projects/projects-3.webp" alt="" width="1775" height="1160" loading="lazy"
+                    decoding="async" draggable="false">
+                </picture>
+
+                <!-- | text -->
+                <div class="projects-item__content">
+                  <h3 class="projects-item__title" data-anim="fade-up" data-delay="0.2s">
+                    «ИТОГИ ГОДА 2025» С&nbsp;Владимиром Путиным
+                  </h3>
+                  <h4 class="projects-item__subtitle" data-anim="fade-up" data-delay="0.2s">
+                    <img src="/images/common/icon-arrow.svg" alt="" width="36" height="36" loading="lazy"
+                      decoding="async" draggable="false" aria-hidden="true">
+                    <span>ГМ-ЭНЕРГО предоставила:</span>
+                  </h4>
+                  <ul class="projects-item__list">
+                    <li class="projects-item__list-item" data-anim="fade-up" data-delay="0.4s">
+                      <img src="/images/projects/icons/generator.svg" alt="" width="35" height="35" loading="lazy"
+                        decoding="async" draggable="false" aria-hidden="true">
+                      <span>3 ДГУ, включая 1 пару генераторов синхронизированных</span>
+                    </li>
+                    <li class="projects-item__list-item" data-anim="fade-up" data-delay="0.5s">
+                      <img src="/images/projects/icons/lighting.svg" alt="" width="35" height="35" loading="lazy"
+                        decoding="async" draggable="false" aria-hidden="true">
+                      <span>Общей <br>мощностью 900 кВт</span>
+                    </li>
+                    <li class="projects-item__list-item" data-anim="fade-up" data-delay="0.6s">
+                      <img src="/images/projects/icons/cable.svg" alt="" width="35" height="35" loading="lazy"
+                        decoding="async" draggable="false" aria-hidden="true">
+                      <span>Всё необходимое энергооборудование</span>
+                    </li>
+                  </ul>
+
+                  <div data-anim="fade-up" data-delay="0.6s">
+                    <a href="./#projects" class="projects-item__link u-btn--regular">
+                      <span>Подробнее</span>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#202020" aria-hidden="true">
+                        <use href="#sprite__arrow-right"></use>
+                      </svg>
+                    </a>
+                  </div>
+
+                  <div class="projects-item__counter"></div>
+                </div>
+
+              </article>
+            </li>
+
+          </ul>
+
+          <div class="projects__slider-navigation">
+            <button type="button" aria-label="Назад" class="projects__slider-prev">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#202020" aria-hidden="true">
+                <use href="#sprite__arrow-right"></use>
+              </svg>
+            </button>
+            <button type="button" aria-label="Вперед" class="projects__slider-next">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#202020" aria-hidden="true">
+                <use href="#sprite__arrow-right"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <a href="./#projects" class="projects__more u-btn--regular" data-anim="fade-up" data-delay="0.2s">
+          Еще 165 проектов
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#202020" aria-hidden="true">
+            <use href="#sprite__arrow-right"></use>
+          </svg>
+        </a>
+
+
+      </div>
+    </section>
+
+
+    <!-- ADVANTAGES -->
+    <section class="advantages">
+      <div class="advantages__container u-container">
+
+        <div class="advantages__content">
+          <h2 class="advantages__title u-h2">
+            Что вы получите выбрав ГМ&nbsp;Энерго?
+          </h2>
+          <ul class="advantages__list">
+
+            <!-- 1 -->
+            <li class="advantages-item">
+              <picture class="advantages-item__image">
+                <img src="/images/advantages/advantages-1.svg" alt="" width="50" height="50" loading="lazy"
+                  decoding="async" draggable="false" aria-hidden="true">
+              </picture>
+              <h3 class="advantages-item__title">
+                Оборудование под&nbsp;любой формат
+              </h3>
+              <p class="advantages-item__description">
+                У нас 300+ единиц энергооборудования разной мощности, подберем решение для небольшого мероприятия и для
+                крупного федерального проекта 
+              </p>
+            </li>
+            <!-- 2 -->
+            <li class="advantages-item">
+              <picture class="advantages-item__image">
+                <img src="/images/advantages/advantages-2.svg" alt="" width="50" height="50" loading="lazy"
+                  decoding="async" draggable="false" aria-hidden="true">
+              </picture>
+              <h3 class="advantages-item__title">
+                Гарантия на бесперебойность
+              </h3>
+              <p class="advantages-item__description">
+                Проектируем систему так чтобы обеспечить бесперебойную работу оборудования во время мероприятия
+              </p>
+            </li>
+            <!-- 3 -->
+            <li class="advantages-item">
+              <picture class="advantages-item__image">
+                <img src="/images/advantages/advantages-3.svg" alt="" width="50" height="50" loading="lazy"
+                  decoding="async" draggable="false" aria-hidden="true">
+              </picture>
+              <h3 class="advantages-item__title">
+                Доставка без&nbsp;задержек
+              </h3>
+              <p class="advantages-item__description">
+                Организуем доставку оборудования собственной техникой, оперативно, без задержек, куда скажете
+              </p>
+            </li>
+            <!-- 4 -->
+            <li class="advantages-item">
+              <picture class="advantages-item__image">
+                <img src="/images/advantages/advantages-4.svg" alt="" width="50" height="50" loading="lazy"
+                  decoding="async" draggable="false" aria-hidden="true">
+              </picture>
+              <h3 class="advantages-item__title">
+                Техническая поддержка 24/7
+              </h3>
+              <p class="advantages-item__description">
+                Наша команда доступна круглосуточно 24/7, оперативно решим любой технический вопрос, если он возникнет
+              </p>
+            </li>
+            <!-- 5 -->
+            <li class="advantages-item">
+              <picture class="advantages-item__image">
+                <img src="/images/advantages/advantages-5.svg" alt="" width="50" height="50" loading="lazy"
+                  decoding="async" draggable="false" aria-hidden="true">
+              </picture>
+              <h3 class="advantages-item__title">
+                Ответственность вся на нас
+              </h3>
+              <p class="advantages-item__description">
+                Берем на себя весь комплекс мер по энергообеспечению вашего мероприятия.
+              </p>
+            </li>
+
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section style="height: 100vh;"></section>
 
   </main>
 
