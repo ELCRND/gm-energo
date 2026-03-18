@@ -1,0 +1,239 @@
+@use "../helpers" as *;
+
+.faq {
+  padding-top: rem(142);
+  padding-bottom: rem(164);
+  background: var(--8);
+
+  &__container {
+  }
+
+  &__title {
+    color: var(--4);
+  }
+
+  &__list {
+    margin-top: rem(70);
+    display: flex;
+    flex-direction: column;
+    gap: rem(6);
+  }
+}
+
+.faq-item {
+  &:has(.faq-item__details[open]) {
+    .faq-item__wrapper {
+      &::before {
+        width: rem(42);
+        height: rem(64);
+        top: auto;
+        bottom: 0;
+        translate: 0 90%;
+        background-color: var(--4);
+
+        transition:
+          background-color var(--transition-duration)
+            cubic-bezier(0.075, 0.82, 0.165, 1),
+          translate var(--transition-duration)
+            cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+    }
+  }
+
+  &:last-of-type {
+    .faq-item__wrapper {
+      &::before {
+        content: none;
+      }
+    }
+  }
+
+  &__details {
+    &[open] {
+      + .faq-item__wrapper {
+        grid-template-rows: 1fr;
+
+        .faq-item__content {
+          background-color: var(--4);
+        }
+      }
+
+      summary {
+        background-color: var(--4);
+        color: var(--3);
+
+        span {
+          &::before,
+          &::after {
+            rotate: 0deg;
+            background-color: var(--3);
+          }
+        }
+      }
+    }
+
+    summary {
+      padding: rem(32) rem(55) rem(22) rem(50);
+      background-color: var(--1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+      font-family: var(--second-family);
+      font-weight: 400;
+      font-size: rem(24);
+      line-height: 130%;
+      color: var(--2);
+      transition: background-color var(--transition-duration)
+        cubic-bezier(0.075, 0.82, 0.165, 1);
+      clip-path: polygon(2.8% 0, 100% 0, 100% 100%, 0 100%, 0 80%);
+
+      span {
+        width: rem(20);
+        height: rem(20);
+        display: block;
+        position: relative;
+
+        &::before,
+        &::after {
+          @include abs-center;
+          content: "";
+          width: 100%;
+          height: rem(2);
+          border-radius: rem(2);
+          background-color: var(--2);
+          transition: all var(--transition-duration) ease;
+        }
+
+        &::after {
+          rotate: -90deg;
+        }
+      }
+    }
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows var(--transition-duration)
+      cubic-bezier(0.075, 0.82, 0.165, 1);
+    position: relative;
+
+    &::before {
+      content: "";
+      width: rem(40);
+      height: rem(62);
+      background-color: var(--1);
+      position: absolute;
+      top: rem(-2);
+      left: 0;
+
+      clip-path: polygon(0 0, 0 100%, 90% 0);
+    }
+  }
+
+  &__content {
+    overflow: hidden;
+    background-color: var(--1);
+    translate: 0 rem(-2);
+    transition: background-color var(--transition-duration)
+      cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    p {
+      padding-inline: rem(50);
+      padding-bottom: rem(50);
+      font-weight: 300;
+      font-size: rem(18);
+      line-height: 130%;
+      color: var(--1);
+    }
+  }
+}
+
+@include tablet {
+  .faq {
+    padding-top: rem(70);
+    padding-bottom: rem(100);
+
+    &__list {
+      margin-top: rem(30);
+      gap: rem(6);
+    }
+  }
+
+  .faq-item {
+    &__details {
+      summary {
+        padding: rem(32) rem(35) rem(22) rem(30);
+        font-size: rem(18);
+        clip-path: polygon(4.5% 0, 100% 0, 100% 100%, 0 100%, 0 85%);
+      }
+    }
+
+    &__content {
+      translate: 0 rem(-2);
+
+      p {
+        padding-inline: rem(50);
+        padding-top: rem(8);
+        padding-bottom: rem(59);
+        font-size: rem(14);
+      }
+    }
+  }
+}
+
+@include tablet-s {
+  .faq {
+    padding-top: rem(50);
+    padding-bottom: rem(50);
+
+    &__title {
+      padding-left: rem(27);
+    }
+
+    &__list {
+      margin-top: rem(20);
+      align-items: center;
+      gap: rem(3);
+    }
+  }
+
+  .faq-item {
+    width: rem(335);
+
+    &__details {
+      summary {
+        height: rem(114);
+        padding: rem(30) rem(44) rem(0) rem(30);
+        font-size: rem(18);
+        clip-path: polygon(8% 0, 100% 0, 100% 100%, 0 100%, 0 48%);
+        font-size: rem(14);
+        align-items: start;
+
+        span {
+          translate: 100% 20%;
+          flex-shrink: 0;
+        }
+      }
+    }
+
+    &__wrapper {
+      &::before {
+        width: rem(28) !important;
+        height: rem(52) !important;
+      }
+    }
+
+    &__content {
+      translate: 0 rem(-2);
+
+      p {
+        max-width: rem(290);
+        padding-inline: rem(30);
+        padding-top: rem(0);
+        padding-bottom: rem(11);
+      }
+    }
+  }
+}

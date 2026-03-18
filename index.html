@@ -989,14 +989,14 @@
             Уточним все детали и быстро найдем подходящие решения
           </p>
 
-          <form action="" class="request__form">
+          <form class="request__form">
 
             <div class="request__form-field field field--name" data-anim="fade-up" data-delay="0.4s">
               <div class="field__wrapper">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#828282" class="field__icon">
                   <use href="#sprite__profile"></use>
                 </svg>
-                <input type="text" id="name" name="name" class="field__input" placeholder="Ваше имя" required
+                <input type="text" id="request-name" name="name" class="field__input" placeholder="Ваше имя" required
                   autocomplete="additional-name">
               </div>
               <div class="field__error">Поле обязательно для заполнения</div>
@@ -1007,8 +1007,8 @@
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#828282" class="field__icon">
                   <use href="#sprite__phone"></use>
                 </svg>
-                <input type="tel" id="phone" name="phone" class="field__input" placeholder="Ваш телефон" required
-                  autocomplete="tel">
+                <input type="tel" id="request-phone" name="phone" class="field__input" placeholder="Ваш телефон"
+                  required autocomplete="tel">
               </div>
               <div class="field__error">Укажите корректный номер телефона</div>
             </div>
@@ -1041,6 +1041,85 @@
 
       </div>
 
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="faq">
+      <div class="faq__container u-container">
+        <h2 class="faq__title u-h2" data-anim="fade-up" data-delay="0.2s">
+          Частые вопросы
+        </h2>
+
+        <ul class="faq__list">
+          <!-- 1 -->
+          <li class="faq-item" data-anim="fade-up" data-delay="0.3s">
+            <details class="faq-item__details" name="faq" open>
+              <summary>
+                Как забронировать оборудование на определенную дату?
+                <span></span>
+              </summary>
+            </details>
+            <div class="faq-item__wrapper">
+              <div class="faq-item__content">
+                <p>
+                  Для того, чтобы забронировать оборудование на определенную дату заказчик обязан внести частичную или
+                  полную предварительную оплату за аренду оборудования
+                </p>
+              </div>
+            </div>
+          </li>
+          <!-- 2 -->
+          <li class="faq-item" data-anim="fade-up" data-delay="0.4s">
+            <details class="faq-item__details" name="faq">
+              <summary>
+                Нужно ли вносить залог при аренде?
+                <span></span>
+              </summary>
+            </details>
+            <div class="faq-item__wrapper">
+              <div class="faq-item__content">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. At, unde!
+                </p>
+              </div>
+            </div>
+          </li>
+          <!-- 3 -->
+          <li class="faq-item" data-anim="fade-up" data-delay="0.5s">
+            <details class="faq-item__details" name="faq">
+              <summary>
+                Как забронировать оборудование на определенную дату?
+                <span></span>
+              </summary>
+            </details>
+            <div class="faq-item__wrapper">
+              <div class="faq-item__content">
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus, iste.
+                </p>
+              </div>
+            </div>
+          </li>
+          <!-- 4 -->
+          <li class="faq-item" data-anim="fade-up" data-delay="0.6s">
+            <details class="faq-item__details" name="faq">
+              <summary>
+                Нужно ли вносить залог при аренде?
+                <span></span>
+              </summary>
+            </details>
+            <div class="faq-item__wrapper">
+              <div class="faq-item__content">
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe, in.
+                </p>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+      </div>
     </section>
 
 
@@ -1081,7 +1160,7 @@
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#828282" class="field__icon">
                 <use href="#sprite__profile"></use>
               </svg>
-              <input type="text" id="name" name="name" class="field__input" placeholder="Ваше имя" required
+              <input type="text" id="consultation-name" name="name" class="field__input" placeholder="Ваше имя" required
                 autocomplete="additional-name">
             </div>
             <div class="field__error">Поле обязательно для заполнения</div>
@@ -1092,8 +1171,8 @@
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#828282" class="field__icon">
                 <use href="#sprite__phone"></use>
               </svg>
-              <input type="tel" id="phone" name="phone" class="field__input" placeholder="Ваш телефон" required
-                autocomplete="tel">
+              <input type="tel" id="consultation-phone" name="phone" class="field__input" placeholder="Ваш телефон"
+                required autocomplete="tel">
             </div>
             <div class="field__error">Укажите корректный номер телефона</div>
           </div>
