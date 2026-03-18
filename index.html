@@ -15,6 +15,7 @@
 <body>
 
 
+  <!-- SPRITES -->
   <svg style="display: none;">
 
     <symbol id="sprite__hero-card">
@@ -34,10 +35,28 @@
         fill="inherit" />
     </symbol>
 
-
     <symbol id="sprite__arrow-right">
       <path d="M12.8333 7.625L17 12M17 12L12.8333 16.375M17 12L7 12" stroke="inherit" stroke-width="2"
         stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+
+    <symbol id="sprite__profile">
+      <path
+        d="M12 13.5557C14.3722 13.5557 16.4711 14.0084 17.9395 14.6973C19.4872 15.4234 20 16.2289 20 16.7783C19.9998 17.4746 19.6205 18.2354 18.3896 18.877C17.1255 19.5358 15.0584 20 12 20C8.94161 20 6.87454 19.5358 5.61035 18.877C4.37952 18.2354 4.00016 17.4746 4 16.7783C4 16.2289 4.51284 15.4234 6.06055 14.6973C7.52885 14.0084 9.62782 13.5557 12 13.5557ZM12 4C13.484 4 14.8184 5.4463 14.8184 7.00977C14.8183 8.52535 13.5293 9.875 12 9.875C10.4707 9.875 9.1817 8.52535 9.18164 7.00977C9.18164 5.4463 10.516 4 12 4Z"
+        stroke="inherit" stroke-width="2" />
+    </symbol>
+
+    <symbol id="sprite__phone">
+      <g clip-path="url(#clip0_139_594)">
+        <path
+          d="M5 4H9L11 9L8.5 10.5C9.57096 12.6715 11.3285 14.429 13.5 15.5L15 13L20 15V19C20 19.5304 19.7893 20.0391 19.4142 20.4142C19.0391 20.7893 18.5304 21 18 21C14.0993 20.763 10.4202 19.1065 7.65683 16.3432C4.8935 13.5798 3.23705 9.90074 3 6C3 5.46957 3.21071 4.96086 3.58579 4.58579C3.96086 4.21071 4.46957 4 5 4"
+          stroke="inherit" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </g>
+      <defs>
+        <clipPath id="clip0_139_594">
+          <rect width="24" height="24" fill="white" />
+        </clipPath>
+      </defs>
     </symbol>
 
 
@@ -870,13 +889,13 @@
       <div class="advantages__container u-container">
 
         <div class="advantages__content">
-          <h2 class="advantages__title u-h2">
+          <h2 class="advantages__title u-h2" data-anim="fade-up" data-delay="0.2s">
             Что вы получите выбрав ГМ&nbsp;Энерго?
           </h2>
           <ul class="advantages__list">
 
             <!-- 1 -->
-            <li class="advantages-item">
+            <li class="advantages-item" data-anim="fade-up" data-delay="0.3s">
               <picture class="advantages-item__image">
                 <img src="/images/advantages/advantages-1.svg" alt="" width="50" height="50" loading="lazy"
                   decoding="async" draggable="false" aria-hidden="true">
@@ -890,7 +909,7 @@
               </p>
             </li>
             <!-- 2 -->
-            <li class="advantages-item">
+            <li class="advantages-item" data-anim="fade-up" data-delay="0.4s">
               <picture class="advantages-item__image">
                 <img src="/images/advantages/advantages-2.svg" alt="" width="50" height="50" loading="lazy"
                   decoding="async" draggable="false" aria-hidden="true">
@@ -903,7 +922,7 @@
               </p>
             </li>
             <!-- 3 -->
-            <li class="advantages-item">
+            <li class="advantages-item" data-anim="fade-up" data-delay="0.2s">
               <picture class="advantages-item__image">
                 <img src="/images/advantages/advantages-3.svg" alt="" width="50" height="50" loading="lazy"
                   decoding="async" draggable="false" aria-hidden="true">
@@ -916,7 +935,7 @@
               </p>
             </li>
             <!-- 4 -->
-            <li class="advantages-item">
+            <li class="advantages-item" data-anim="fade-up" data-delay="0.3s">
               <picture class="advantages-item__image">
                 <img src="/images/advantages/advantages-4.svg" alt="" width="50" height="50" loading="lazy"
                   decoding="async" draggable="false" aria-hidden="true">
@@ -929,7 +948,7 @@
               </p>
             </li>
             <!-- 5 -->
-            <li class="advantages-item">
+            <li class="advantages-item" data-anim="fade-up" data-delay="0.4s">
               <picture class="advantages-item__image">
                 <img src="/images/advantages/advantages-5.svg" alt="" width="50" height="50" loading="lazy"
                   decoding="async" draggable="false" aria-hidden="true">
@@ -949,13 +968,89 @@
     </section>
 
 
+    <!-- REQUEST FORM -->
+    <section class="request">
+      <picture class="request__image">
+        <source media="(max-width:767px )" srcset="/images/request/request-image--mobile.webp">
+
+        <img src="/images/request/request-image.webp" alt="" width="884" height="700" loading="lazy" decoding="async"
+          draggable="false">
+      </picture>
+
+      <div class="request__container u-container">
+
+        <div class="request__content">
+          <div class="request__header">
+            <h2 class="request__title u-h2" data-anim="fade-up" data-delay="0.2s">
+              Закажите расчет стоимости вашего мероприятия
+            </h2>
+          </div>
+          <p class="request__description" data-anim="fade-up" data-delay="0.3s">
+            Уточним все детали и быстро найдем подходящие решения
+          </p>
+
+          <form action="" class="request__form">
+
+            <div class="request__form-field field field--name" data-anim="fade-up" data-delay="0.4s">
+              <div class="field__wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#828282" class="field__icon">
+                  <use href="#sprite__profile"></use>
+                </svg>
+                <input type="text" id="name" name="name" class="field__input" placeholder="Ваше имя" required
+                  autocomplete="additional-name">
+              </div>
+              <div class="field__error">Поле обязательно для заполнения</div>
+            </div>
+
+            <div class="request__form-field field field--phone" data-anim="fade-up" data-delay="0.5s">
+              <div class="field__wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#828282" class="field__icon">
+                  <use href="#sprite__phone"></use>
+                </svg>
+                <input type="tel" id="phone" name="phone" class="field__input" placeholder="Ваш телефон" required
+                  autocomplete="tel">
+              </div>
+              <div class="field__error">Укажите корректный номер телефона</div>
+            </div>
+
+            <div data-anim="fade-up" data-delay="0.6s">
+              <button type="submit" class="request__submit u-btn--regular">
+                Заказать расчет
+              </button>
+            </div>
+
+            <div class="request__policy" data-anim="fade-up" data-delay="0.7s">
+              <p>
+                Отправляя заявку я соглашаюсь с <a href="./#header" target="_blank">политикой конфиденциальности</a>
+                компании в области обработки персональных данных
+              </p>
+            </div>
+
+          </form>
+
+          <div class="request__phone" data-anim="fade-up" data-delay="0.2s">
+            <span>или звоните</span>
+            <a href="tel:+79154049261">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FDCA27">
+                <use href="#sprite__phone"></use>
+              </svg>
+              +7 915 404 92 61
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
     <section style="height: 100vh;"></section>
 
   </main>
 
 
 
-  <!-- popup -->
+  <!-- consultation-popup -->
   <div class="popup popup--consultation" id="consultation-popup" style="opacity: 0;">
     <div class="popup__overlay"></div>
 
@@ -970,7 +1065,9 @@
       </picture>
 
       <div class="popup__header">
-        <h2 class="popup__title u-h2">Получите консультацию</h2>
+        <h2 class="popup__title u-h2">
+          Получите консультацию
+        </h2>
       </div>
 
       <!-- | form -->
@@ -981,10 +1078,8 @@
 
           <div class="field field--name">
             <div class="field__wrapper">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="field__icon">
-                <path
-                  d="M12 13.5557C14.3722 13.5557 16.4711 14.0084 17.9395 14.6973C19.4872 15.4234 20 16.2289 20 16.7783C19.9998 17.4746 19.6205 18.2354 18.3896 18.877C17.1255 19.5358 15.0584 20 12 20C8.94161 20 6.87454 19.5358 5.61035 18.877C4.37952 18.2354 4.00016 17.4746 4 16.7783C4 16.2289 4.51284 15.4234 6.06055 14.6973C7.52885 14.0084 9.62782 13.5557 12 13.5557ZM12 4C13.484 4 14.8184 5.4463 14.8184 7.00977C14.8183 8.52535 13.5293 9.875 12 9.875C10.4707 9.875 9.1817 8.52535 9.18164 7.00977C9.18164 5.4463 10.516 4 12 4Z"
-                  stroke="#828282" stroke-width="2" />
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#828282" class="field__icon">
+                <use href="#sprite__profile"></use>
               </svg>
               <input type="text" id="name" name="name" class="field__input" placeholder="Ваше имя" required
                 autocomplete="additional-name">
@@ -994,17 +1089,8 @@
 
           <div class="field field--phone">
             <div class="field__wrapper">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="field__icon">
-                <g clip-path="url(#clip0_139_594)">
-                  <path
-                    d="M5 4H9L11 9L8.5 10.5C9.57096 12.6715 11.3285 14.429 13.5 15.5L15 13L20 15V19C20 19.5304 19.7893 20.0391 19.4142 20.4142C19.0391 20.7893 18.5304 21 18 21C14.0993 20.763 10.4202 19.1065 7.65683 16.3432C4.8935 13.5798 3.23705 9.90074 3 6C3 5.46957 3.21071 4.96086 3.58579 4.58579C3.96086 4.21071 4.46957 4 5 4"
-                    stroke="#828282" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </g>
-                <defs>
-                  <clipPath id="clip0_139_594">
-                    <rect width="24" height="24" fill="white" />
-                  </clipPath>
-                </defs>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#828282" class="field__icon">
+                <use href="#sprite__phone"></use>
               </svg>
               <input type="tel" id="phone" name="phone" class="field__input" placeholder="Ваш телефон" required
                 autocomplete="tel">
@@ -1029,12 +1115,19 @@
     </div>
   </div>
 
-  <!-- success -->
-  <div class="popup" id="success-popup" style="opacity: 0;">
+  <!-- success popup -->
+  <div class="popup popup--success" id="success-popup" style="opacity: 0;">
     <div class="popup__overlay"></div>
 
     <div class="popup__content">
       <button class="popup__close" aria-label="Закрыть" type="button"></button>
+
+      <!-- | image -->
+      <picture class="popup__image">
+        <source media="(max-width:767px )" srcset="/images/popup/popup-image--mobile.webp">
+
+        <img src="/images/popup/popup-image.webp" alt="" width="524" height="579" loading="lazy" decoding="async">
+      </picture>
 
       <div class="popup__header">
         <h2 class="popup__title u-h2">Спасибо за&nbsp;заявку!</h2>

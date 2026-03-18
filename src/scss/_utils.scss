@@ -64,6 +64,7 @@
   font-weight: 500;
   font-size: rem(45);
   line-height: 100%;
+  letter-spacing: 0em;
 
   @include tablet {
     font-size: rem(30);

@@ -17,11 +17,11 @@
   }
 
   &__list {
-    margin-top: rem(71);
+    margin-top: rem(67);
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    row-gap: rem(22);
+    row-gap: rem(21);
     counter-reset: events-counter;
   }
 }

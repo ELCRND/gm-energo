@@ -1,7 +1,7 @@
 @use "../helpers" as *;
 
 .hero {
-  min-height: rem(1090);
+  min-height: rem(1080);
   position: relative;
 
   &::before {
@@ -54,7 +54,7 @@
 
   &__container {
     min-height: inherit;
-    padding-top: rem(249);
+    padding-top: rem(247);
     display: flex;
     justify-content: space-between;
     position: relative;
@@ -77,7 +77,7 @@
   }
 
   &__title {
-    margin-top: rem(58);
+    margin-top: rem(57);
     padding-left: rem(42);
     font-family: var(--second-family);
     font-weight: 500;
@@ -120,19 +120,18 @@
   }
 
   &__action {
-    width: rem(490);
+    width: rem(485);
     height: rem(69);
-    margin-top: rem(54);
+    margin-top: rem(51);
   }
 
   &__cards {
-    margin-top: rem(1);
     display: flex;
     flex-direction: column;
-    gap: rem(26);
+    gap: rem(23);
 
     &-item {
-      width: rem(335);
+      width: rem(345);
       min-height: rem(179);
       padding-left: rem(90);
       display: flex;
@@ -183,7 +182,7 @@
     position: absolute;
     bottom: 0;
     z-index: 1;
-    translate: 0 46%;
+    translate: 0 47%;
     clip-path: polygon(2% 0%, 100% 0, 100% 75%, 98% 100%, 0 100%, 0 25%);
 
     .swiper-wrapper {
@@ -221,9 +220,10 @@
 
         &::before {
           @include abs-center;
-          content: "";
+          // content: "";
           width: rem(28);
           height: rem(28);
+          // z-index: -1;
         }
 
         &-active {
@@ -448,7 +448,7 @@
     }
 
     &__partners {
-      //   width: calc(100% - var(--container-padding-x--tablet) * 2);
+      width: rem(380);
       height: rem(107);
       translate: 0 42%;
       clip-path: polygon(8% 0%, 100% 0, 100% 58%, 92% 100%, 0 100%, 0 42%);
@@ -460,11 +460,11 @@
         // gap: rem(30);
 
         .swiper-slide {
-          width: fluid(84, 500) !important;
+          width: fluid(84, 300) !important;
           height: rem(38) !important;
           display: flex;
           justify-content: center;
-          margin-right: rem(24) !important;
+          margin-right: rem(0) !important;
         }
       }
 

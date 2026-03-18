@@ -2,7 +2,8 @@
 
 .complex {
   padding-top: rem(235);
-  padding-bottom: rem(152);
+  padding-bottom: rem(147);
+  background: var(--8);
 
   &__container {
   }
@@ -21,12 +22,12 @@
   }
 
   &__steps {
-    margin-top: rem(72);
+    margin-top: rem(69);
     counter-reset: complex-counter;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    row-gap: rem(40);
+    row-gap: rem(36);
   }
 
   &__step {

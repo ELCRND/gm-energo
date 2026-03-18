@@ -1,13 +1,11 @@
-export class ConsultationForm {
+import { FormManager } from "./FormManager";
+
+export class ConsultationForm extends FormManager {
   constructor() {
+    super(".popup__form");
+
     this.POPUP = document.querySelector("#consultation-popup");
-    this.POPUP_OPEN = document.querySelector(".hero__action");
     this.SUCCESS_POPUP = document.querySelector("#success-popup");
-    this.FORM = document.querySelector(".popup__form");
-
-    if (!this.FORM) return;
-
-    this.INPUTS = this.FORM.querySelectorAll(".field__input");
     this.SUBMIT_BTN = this.FORM.querySelector(".popup__submit");
 
     this.init();
@@ -18,8 +16,6 @@ export class ConsultationForm {
   }
 
   on() {
-    this.POPUP_OPEN.addEventListener("click", () => this.open());
-
     // открыть
     document
       .querySelectorAll(".hero__action, .equipment__action")
@@ -37,62 +33,14 @@ export class ConsultationForm {
       overlay.addEventListener("click", () => this.closeAll());
     });
 
-    // закрытие по Esc
+    // закрытие по esc
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") this.closeAll();
     });
-
-    // валидация при вводе
-    this.INPUTS.forEach((input) => {
-      input.addEventListener("input", () => this.validateField(input));
-      input.addEventListener("blur", () => this.validateField(input));
-    });
-
-    // отправка формы
-    this.FORM.addEventListener("submit", (e) => {
-      e.preventDefault();
-      this.handleSubmit();
-    });
   }
 
-  validateField(input) {
-    const field = input.closest(".field");
-    const value = input.value.trim();
-
-    if (input.required && value === "") {
-      field.classList.add("field--error");
-      return false;
-    }
-
-    // phone validation
-    if (input.type === "tel" && value !== "") {
-      const phoneRegex = /^[\d\s+()-]{7,18}$/;
-      if (!phoneRegex.test(value)) {
-        field.classList.add("field--error");
-        field.classList.remove("field--correct");
-        return false;
-      }
-    }
-
-    if (value !== "") {
-      field.classList.add("field--correct");
-    }
-
-    field.classList.remove("field--error");
-    return true;
-  }
-
-  validateForm() {
-    let isValid = true;
-    this.INPUTS.forEach((input) => {
-      if (!this.validateField(input)) {
-        isValid = false;
-      }
-    });
-    return isValid;
-  }
-
-  handleSubmit() {
+  // отправка формы
+  handleSubmit(e) {
     if (!this.validateForm()) {
       return;
     }
@@ -102,11 +50,15 @@ export class ConsultationForm {
 
     // имитация запроса
     setTimeout(() => {
+      // сбор данных из формы
+      const formData = new FormData(e.target);
+      const data = Object.fromEntries(formData.entries());
+      alert(JSON.stringify(data));
+
+      // уведомление об успешной отравке
       this.showSuccess();
+      // сброс формы
       this.FORM.reset();
-      this.INPUTS.forEach((input) => {
-        input.closest(".field").classList.remove("field--error");
-      });
     }, 1200);
   }
 

@@ -1,7 +1,8 @@
 @use "../helpers" as *;
 
 .equipment {
-  padding-block: rem(152);
+  padding-top: rem(150);
+  padding-bottom: rem(149);
   position: relative;
 
   &__bg {
@@ -35,7 +36,8 @@
   }
 
   &__description {
-    margin-top: rem(32);
+    margin-top: rem(30);
+    line-height: 120%;
     font-size: rem(20);
     color: var(--1);
   }
@@ -44,8 +46,7 @@
     margin-top: rem(33);
     display: flex;
     flex-wrap: wrap;
-
-    row-gap: rem(33);
+    row-gap: rem(28);
 
     &-item {
       flex: 0 0 rem(230);
@@ -71,15 +72,16 @@
   }
 
   &__action {
-    width: rem(490);
+    width: rem(485);
     height: rem(70);
-    margin-top: rem(65);
+    margin-top: rem(62);
   }
 }
 
 @include tablet {
   .equipment {
-    padding-block: rem(100);
+    padding-top: rem(100);
+    padding-bottom: rem(99);
 
     &__content {
       max-width: rem(550);
@@ -95,8 +97,8 @@
     }
 
     &__list {
-      margin-top: rem(30);
-      row-gap: rem(23);
+      margin-top: rem(34);
+      row-gap: rem(21);
 
       &-item {
         flex: 0 0 rem(210);
@@ -114,7 +116,7 @@
 
     &__action {
       width: rem(485);
-      margin-top: rem(64);
+      margin-top: rem(68);
     }
   }
 }
@@ -138,7 +140,7 @@
     }
 
     &__list {
-      margin-top: rem(20);
+      margin-top: rem(26);
       //   row-gap: rem(23);
 
       &-item {

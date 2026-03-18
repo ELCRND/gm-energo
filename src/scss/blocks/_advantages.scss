@@ -2,6 +2,7 @@
 
 .advantages {
   padding-top: rem(152);
+  padding-bottom: rem(141);
 
   &__container {
   }
@@ -15,8 +16,8 @@
 
   &__title {
     flex: 0 0 rem(327);
-    color: var(--4);
     margin-right: auto;
+    color: var(--4);
   }
 
   &__list {
@@ -69,8 +70,10 @@
 @include tablet {
   .advantages {
     padding-top: rem(100);
+    padding-bottom: rem(99);
 
     &__content {
+      padding-right: rem(30);
       row-gap: rem(28);
       column-gap: rem(56);
       justify-content: center;
@@ -116,6 +119,7 @@
 @include mobile {
   .advantages {
     padding-top: rem(50);
+    padding-bottom: rem(49);
 
     &__content {
       flex-direction: column;
@@ -141,12 +145,6 @@
     flex: 0 0 auto;
     margin-inline: auto;
     grid-template-columns: auto 1fr;
-
-    &:first-of-type {
-      .advantages-item__description {
-        max-width: rem(330);
-      }
-    }
 
     &__image {
       width: rem(100);
