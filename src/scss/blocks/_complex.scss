@@ -32,6 +32,7 @@
 
   &__step {
     flex: 0 1 rem(710);
+    counter-increment: complex-counter;
 
     &:nth-of-type(1) {
       .complex__step-title {
@@ -92,8 +93,7 @@
 
       &::before,
       &::after {
-        counter-increment: complex-counter;
-        content: "0" counter(complex-counter);
+        content: counter(complex-counter, decimal-leading-zero);
         width: rem(114);
         height: rem(105);
         padding-top: rem(20);

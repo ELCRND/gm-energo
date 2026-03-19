@@ -398,7 +398,6 @@
 
     &__title {
       padding-left: rem(34);
-      // max-width: rem(511);
 
       &::first-letter {
         padding-left: 0;
@@ -440,6 +439,7 @@
         flex-direction: column;
         gap: rem(10);
         font-size: rem(18);
+        translate: rem(35) rem(50);
 
         & > * {
           justify-content: start;
