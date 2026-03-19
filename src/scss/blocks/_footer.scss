@@ -1,0 +1,321 @@
+@use "../helpers" as *;
+
+.footer {
+  padding-top: rem(70);
+  padding-bottom: rem(30);
+  background: var(--1);
+
+  &__container {
+  }
+
+  &__top {
+    padding-right: rem(20);
+    display: grid;
+    grid-template-columns: 1fr 0.8fr 1.5fr 1fr;
+    justify-items: end;
+  }
+
+  &__column {
+    padding-top: rem(18);
+    display: flex;
+    flex-direction: column;
+
+    &--logo {
+      padding-top: 0;
+      justify-self: start;
+    }
+  }
+
+  &__logo {
+    width: rem(242);
+  }
+
+  &__description {
+    max-width: rem(210);
+    margin-top: rem(20);
+    font-weight: 300;
+    font-size: rem(16);
+    color: var(--2);
+  }
+
+  &__copyright {
+    max-width: rem(200);
+    margin-top: rem(70);
+    font-weight: 300;
+    font-size: rem(16);
+    color: var(--5);
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: rem(25);
+    line-height: 100%;
+    color: var(--2);
+
+    &-small {
+      font-weight: 300;
+      font-size: rem(16);
+      color: var(--5);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: rem(24);
+  }
+
+  &__link {
+    font-size: rem(18);
+    text-transform: uppercase;
+    color: var(--2);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__address {
+    max-width: rem(225);
+    margin-top: rem(16);
+    font-style: normal;
+    font-weight: 300;
+    font-size: rem(16);
+    color: var(--2);
+  }
+
+  &__contacts {
+    margin-top: rem(26);
+    display: flex;
+    flex-direction: column;
+    gap: rem(20);
+
+    &-tel,
+    &-email {
+      display: flex;
+      flex-direction: column;
+
+      span {
+        font-weight: 300;
+        font-size: rem(16);
+        color: var(--2);
+      }
+
+      a {
+        margin-top: rem(6);
+        font-size: rem(25);
+        line-height: 100%;
+        color: var(--2);
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &-email {
+      a {
+        margin-top: 0;
+        font-size: rem(16);
+      }
+    }
+  }
+
+  &__bottom {
+    width: 100%;
+    margin-top: rem(72);
+    padding-top: rem(15);
+    border-top: 2px solid var(--8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__privacy {
+    font-size: rem(16);
+    color: var(--5);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    gap: rem(5);
+
+    &-link {
+      &:hover {
+        svg {
+          scale: 1.08;
+        }
+      }
+    }
+  }
+}
+
+@include tablet {
+  .footer {
+    padding-top: rem(50);
+    padding-bottom: rem(20);
+
+    &__description {
+      max-width: rem(240);
+      font-size: rem(14);
+    }
+
+    &__copyright {
+      margin-top: rem(80);
+      font-size: rem(14);
+    }
+
+    &__title {
+      font-size: rem(18);
+
+      &-small {
+        font-size: rem(14);
+      }
+    }
+
+    &__list {
+      gap: rem(20);
+    }
+
+    &__link {
+      font-size: rem(16);
+    }
+
+    &__address {
+      margin-top: rem(20);
+      font-size: rem(14);
+    }
+
+    &__contacts {
+      margin-top: rem(20);
+      gap: rem(24);
+
+      &-tel,
+      &-email {
+        span {
+          font-size: rem(14);
+        }
+
+        a {
+          margin-top: rem(12);
+          font-size: rem(16);
+        }
+      }
+
+      &-email {
+        a {
+          margin-top: rem(0);
+          font-size: rem(14);
+        }
+      }
+    }
+
+    &__bottom {
+      width: 100%;
+      margin-top: rem(50);
+    }
+
+    &__privacy {
+      font-size: rem(14);
+    }
+  }
+}
+
+@include mobile {
+  .footer {
+    position: relative;
+
+    &__top {
+      padding-right: 0;
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: rem(20);
+    }
+
+    &__column {
+      &--logo,
+      &--list {
+        flex: 1 1 100%;
+      }
+
+      &--moscow {
+        flex: 0 1 rem(160);
+      }
+      &--crimea {
+        flex: 0 1 rem(131);
+      }
+
+      &--list {
+        margin-bottom: rem(14);
+      }
+    }
+
+    &__description {
+      max-width: rem(335);
+      font-size: rem(12);
+    }
+
+    &__copyright {
+      margin: 0;
+      position: absolute;
+      bottom: rem(26);
+      font-size: rem(12);
+    }
+
+    &__title {
+      font-size: rem(16);
+
+      &-small {
+        display: block;
+      }
+    }
+
+    &__list {
+      width: 100%;
+      gap: rem(5);
+
+      li {
+        width: 100%;
+        display: flex;
+      }
+    }
+
+    &__link {
+      width: 100%;
+      padding: rem(8) rem(20);
+      background: var(--8);
+    }
+
+    &__address {
+      margin-top: rem(19);
+      font-size: rem(14);
+    }
+
+    &__contacts {
+      margin-top: rem(15);
+      gap: rem(22);
+
+      &-tel,
+      &-email {
+        a {
+          margin-top: rem(5);
+        }
+      }
+    }
+
+    &__bottom {
+      width: 100%;
+      margin-top: rem(50);
+      padding-top: rem(10);
+      align-items: start;
+    }
+
+    &__privacy {
+      font-size: rem(12);
+    }
+  }
+}

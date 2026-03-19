@@ -302,7 +302,7 @@
         gap: rem(10);
 
         svg {
-          left: rem(-2);
+          // left: rem(-2);
         }
 
         b {
@@ -448,17 +448,13 @@
     }
 
     &__partners {
-      width: rem(380);
+      width: rem(336);
       height: rem(107);
       translate: 0 42%;
       clip-path: polygon(8% 0%, 100% 0, 100% 58%, 92% 100%, 0 100%, 0 42%);
       padding-inline: rem(24);
 
       .swiper-wrapper {
-        // padding-top: rem(30);
-        // align-items: start;
-        // gap: rem(30);
-
         .swiper-slide {
           width: fluid(84, 300) !important;
           height: rem(38) !important;

@@ -66,11 +66,13 @@
   }
 
   &__form {
-    margin-top: rem(52);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: end;
     translate: -0.5% 0;
+
+    &-fields {
+      margin-top: rem(52);
+      display: flex;
+      justify-content: end;
+    }
 
     .field {
       translate: 6% 0 !important;
@@ -81,19 +83,9 @@
 
       &__wrapper {
         width: rem(330);
-        clip-path: polygon(12% 0%, 100% 0%, 88% 100%, 0% 100%);
 
-        &::before,
-        &::after {
-          content: "";
-          width: rem(3);
-          rotate: 29.5deg;
-          translate: 650% -5%;
-        }
-
-        &::after {
-          rotate: 29.5deg;
-          translate: -680% -5%;
+        &:before {
+          transform: skew(-31deg) scale(0.875, 1);
         }
       }
 
@@ -110,11 +102,17 @@
   &__submit {
     width: rem(350);
     height: rem(70);
-    clip-path: polygon(12% 0%, 100% 0%, 88% 100%, 0% 100%);
+    translate: 0% 0;
+
+    &:before {
+      transform: skew(-31deg) scale(0.885, 1);
+    }
   }
 
   &__policy {
+    width: fit-content;
     margin-top: rem(30);
+    margin-left: auto;
     font-weight: 300;
     font-size: rem(16);
     color: var(--1);
@@ -142,16 +140,16 @@
 
     &:before {
       content: "";
-      width: rem(300);
+      width: rem(266);
       height: rem(100);
       background-color: var(--1);
       opacity: 0.1;
       position: absolute;
       top: 0;
       left: 0;
-      translate: -60% -20%;
-      clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%);
       z-index: -1;
+      translate: -60% -20%;
+      transform: skew(-31deg) scale(0.915, 1);
     }
 
     & > span {
@@ -196,8 +194,8 @@
     &__header {
       &:before {
         content: "";
-        width: 130%;
-        translate: 44% 0;
+        width: 129%;
+        translate: 43.5% 0;
       }
     }
 
@@ -217,10 +215,12 @@
     }
 
     &__form {
-      margin-top: rem(30);
-      display: flex;
       justify-content: start;
       translate: 0% 0;
+
+      &-fields {
+        margin-top: rem(30);
+      }
 
       .field {
         translate: 0% 0 !important;
@@ -230,22 +230,8 @@
         }
 
         &__wrapper {
-          width: rem(300);
+          width: fluid(200, 400);
           height: rem(70);
-          clip-path: polygon(14% 0%, 100% 0%, 86% 100%, 0% 100%);
-
-          &::before,
-          &::after {
-            content: "";
-            //   width: rem(3);
-            rotate: 30.8deg;
-            translate: 680% -5%;
-          }
-
-          &::after {
-            rotate: 31deg;
-            translate: -750% -5%;
-          }
         }
 
         &__input {
@@ -259,7 +245,7 @@
     }
 
     &__submit {
-      width: rem(350);
+      width: fluid(150, 500);
       height: rem(70);
       translate: -8.5% 0;
     }
@@ -280,86 +266,9 @@
       align-self: flex-start;
       translate: 18% 70%;
 
-      &:before {
-        content: "";
-        width: rem(240);
-        translate: -26% -30%;
-        clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-      }
-
-      & > span {
-        //   padding-left: rem(55);
-      }
-
       a {
         margin-top: rem(5);
-        //   gap: rem(8);
         font-size: rem(25);
-      }
-    }
-  }
-}
-
-@include tablet-s {
-  .request {
-    &__container {
-      padding: rem(100) rem(20) rem(156) rem(50);
-    }
-
-    &__content {
-      align-items: start;
-    }
-
-    &__header {
-      &:before {
-        content: "";
-        width: 100%;
-        translate: 27% 0;
-      }
-    }
-
-    &__title {
-      translate: rem(110);
-
-      &::first-letter {
-        padding-left: rem(22);
-      }
-    }
-
-    &__description {
-      translate: 22% 0;
-    }
-
-    &__form {
-      .field {
-        &__error {
-          font-size: rem(11);
-          text-wrap: nowrap;
-          left: 50%;
-          bottom: rem(5);
-          translate: -50% 0;
-        }
-      }
-    }
-
-    &__submit {
-      translate: -5% 15%;
-    }
-
-    &__policy {
-      flex: 0 0 100%;
-      translate: -2.5% 0;
-      text-align: left;
-    }
-
-    &__phone {
-      translate: 159% -216%;
-
-      &:before {
-        content: "";
-        width: rem(252);
-        height: rem(70);
-        clip-path: polygon(17% 0%, 100% 0%, 83% 100%, 0% 100%);
       }
     }
   }
@@ -411,9 +320,11 @@
     }
 
     &__form {
-      margin-top: rem(18);
-      flex-direction: column;
-      gap: rem(10);
+      &-fields {
+        margin-top: rem(18);
+        flex-direction: column;
+        gap: rem(10);
+      }
 
       .field {
         translate: 0 0 !important;
@@ -425,18 +336,6 @@
         &__wrapper {
           width: rem(335);
           height: rem(57);
-          clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
-
-          &::before,
-          &::after {
-            content: "";
-            translate: 550% -5%;
-          }
-
-          &::after {
-            rotate: 30.5deg;
-            translate: -580% -5%;
-          }
         }
 
         &__input {
@@ -457,7 +356,7 @@
     }
 
     &__policy {
-      margin-top: rem(10);
+      margin-top: rem(20);
       font-size: rem(12);
       text-align: left;
       translate: 0 0;

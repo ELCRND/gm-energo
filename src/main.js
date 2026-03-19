@@ -5,6 +5,7 @@ import { Animation } from "./js/Animation";
 import { ConsultationForm } from "./js/ConsultationForm";
 import { HeroSlider, ProjectsSlider } from "./js/Sliders";
 import { RequestForm } from "./js/RequestForm";
+import { ContactsForm } from "./js/ContactsForm";
 
 document.addEventListener("DOMContentLoaded", () => {
   new BgVideo(); // hero bg video
@@ -18,6 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
   ProjectsSlider();
 
   new RequestForm();
+
+  new ContactsForm();
 
   // popup / consultation form
   new ConsultationForm();

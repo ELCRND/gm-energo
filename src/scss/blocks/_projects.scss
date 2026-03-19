@@ -40,8 +40,19 @@
       @include flex-center;
       width: rem(90);
       height: rem(50);
-      background-color: var(--3);
-      clip-path: polygon(34% 0%, 100% 0%, 66% 100%, 0% 100%);
+      position: relative;
+
+      &:before {
+        content: "";
+        width: 75%;
+        height: 100%;
+        background-color: var(--3);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: skew(-31deg) scale(0.915, 1) translate(-78%, -50%);
+        z-index: -1;
+      }
 
       &:disabled {
         opacity: 0.5;
@@ -71,7 +82,7 @@
   }
 
   &__more {
-    width: rem(395);
+    width: rem(385);
     height: rem(69);
     margin: rem(47) auto auto;
   }
@@ -94,7 +105,7 @@
     top: 0;
     right: 0;
     z-index: 1;
-    clip-path: polygon(35.8% 0, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(35% 0, 100% 0%, 100% 100%, 0% 100%);
   }
 
   &::after {
@@ -115,7 +126,7 @@
   }
 
   &__image {
-    width: 74%;
+    width: 74.5%;
     position: absolute;
     top: 0;
     right: 0;
@@ -188,7 +199,10 @@
     width: rem(320);
     height: rem(69);
     margin-top: rem(49);
-    clip-path: polygon(13% 0%, 100% 0%, 87% 100%, 0% 100%);
+
+    &:before {
+      transform: skew(-31deg) scale(0.87, 1);
+    }
   }
 
   &__counter {
@@ -439,9 +453,7 @@
     }
 
     &__counter {
-      //   width: rem(197);
       height: auto;
-      //   display: block;
       margin-top: rem(186);
       padding-right: 0;
       justify-content: start;
@@ -450,10 +462,7 @@
       position: static;
       align-self: start;
       order: 1;
-
-      &::after {
-        // font-size: rem(20);
-      }
+      translate: 0 0;
     }
   }
 }

@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import { resolve } from "path";
 import PluginCritical from "rollup-plugin-critical";
 
-// npm install -D sass autoprefixer postcss postcss-preset-env cssnano sharp
+// npm install -D sass terser autoprefixer postcss postcss-preset-env cssnano sharp
 
 export default defineConfig({
   // Базовый путь для продакшена
@@ -60,33 +60,31 @@ export default defineConfig({
     },
 
     // Оптимизация исходных карт
-    sourcemap: true,
+    sourcemap: false,
   },
 
   // Плагины
   plugins: [
-    PluginCritical({
-      criticalUrl: "http://localhost:4173/",
-      criticalBase: "./dist/",
-
-      criticalPages: [
-        {
-          uri: "", // главная страница
-          template: "index", // имя без .html
-        },
-      ],
-
-      criticalConfig: {
-        inline: true,
-        extract: true,
-        width: 1920,
-        height: 1080,
-        penthouse: {
-          timeout: 60000,
-          blockJSRequests: false,
-        },
-      },
-    }),
+    // PluginCritical({
+    //   criticalUrl: "http://localhost:4173/",
+    //   criticalBase: "./dist/",
+    //   criticalPages: [
+    //     {
+    //       uri: "", // главная страница
+    //       template: "index", // имя без .html
+    //     },
+    //   ],
+    //   criticalConfig: {
+    //     inline: true,
+    //     extract: true,
+    //     width: 1920,
+    //     height: 1080,
+    //     penthouse: {
+    //       timeout: 60000,
+    //       blockJSRequests: false,
+    //     },
+    //   },
+    // }),
   ],
 
   // CSS препроцессинг
@@ -106,6 +104,6 @@ export default defineConfig({
 
   // Оптимизация зависимостей
   optimizeDeps: {
-    include: [], // Добавьте библиотеки если используются
+    include: [],
   },
 });

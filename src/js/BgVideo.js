@@ -8,7 +8,7 @@ export class BgVideo {
     this.desktopSrc = this.VIDEO.getAttribute("data-src");
     this.mobileSrc = this.VIDEO.getAttribute("data-src-mobile");
     this.mobileSize = 767; // до 767px подключаем мобильную версию
-    this.timeoutPlay = 950; // ms
+    this.timeoutPlay = 0; // ms
 
     this.isLoaded = false;
     this.source = null;

@@ -90,14 +90,14 @@
       position: relative;
       z-index: 1;
 
-      &::before {
+      &::before,
+      &::after {
         counter-increment: complex-counter;
         content: "0" counter(complex-counter);
-        width: rem(168);
+        width: rem(114);
         height: rem(105);
         padding-top: rem(20);
-        padding-left: rem(50);
-        background-color: var(--1);
+        padding-left: rem(20);
         font-family: var(--second-family);
         font-weight: 500;
         font-size: rem(45);
@@ -105,10 +105,16 @@
         color: var(--3);
         position: absolute;
         top: 0;
-        left: rem(-26);
+        left: rem(-2);
         translate: 0 -78%;
         z-index: -1;
-        clip-path: polygon(37% 0%, 100% 0%, 63% 100%, 0% 100%);
+      }
+
+      &::after {
+        content: "";
+        background-color: var(--1);
+        transform: skew(-31deg) scale(0.915, 1);
+        z-index: -2;
       }
     }
 
@@ -173,13 +179,14 @@
       &-title {
         margin-top: rem(20);
 
-        &::before {
-          width: rem(141);
+        &::before,
+        &::after {
+          width: rem(96);
           height: rem(88);
-          padding-left: rem(45);
+          padding-left: rem(20);
           font-size: rem(30);
           position: absolute;
-          left: rem(-21);
+          left: rem(2);
           translate: 0 -80%;
         }
       }
@@ -256,13 +263,14 @@
         margin-top: rem(15);
         font-size: rem(15);
 
-        &::before {
-          width: rem(112);
+        &::before,
+        &:after {
+          width: rem(74);
           height: rem(70);
-          padding-left: rem(38);
+          padding-left: rem(19);
           font-size: rem(22);
           position: absolute;
-          left: rem(-18);
+          left: rem(0);
           translate: 0 -75%;
         }
       }

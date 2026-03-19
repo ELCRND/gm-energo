@@ -2,7 +2,7 @@
 
 .faq {
   padding-top: rem(142);
-  padding-bottom: rem(164);
+  padding-bottom: rem(228);
   background: var(--8);
 
   &__container {
@@ -26,16 +26,10 @@
       &::before {
         width: rem(42);
         height: rem(64);
-        top: auto;
         bottom: 0;
-        translate: 0 90%;
+        translate: 0 95%;
         background-color: var(--4);
-
-        transition:
-          background-color var(--transition-duration)
-            cubic-bezier(0.075, 0.82, 0.165, 1),
-          translate var(--transition-duration)
-            cubic-bezier(0.075, 0.82, 0.165, 1);
+        transition: background-color 0s ease-out 0.175s;
       }
     }
   }
@@ -84,8 +78,7 @@
       font-size: rem(24);
       line-height: 130%;
       color: var(--2);
-      transition: background-color var(--transition-duration)
-        cubic-bezier(0.075, 0.82, 0.165, 1);
+      transition: background-color var(--transition-duration) ease-out;
       clip-path: polygon(2.8% 0, 100% 0, 100% 100%, 0 100%, 0 80%);
 
       span {
@@ -115,8 +108,7 @@
   &__wrapper {
     display: grid;
     grid-template-rows: 0fr;
-    transition: grid-template-rows var(--transition-duration)
-      cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: grid-template-rows var(--transition-duration) ease-out;
     position: relative;
 
     &::before {
@@ -125,9 +117,9 @@
       height: rem(62);
       background-color: var(--1);
       position: absolute;
-      top: rem(-2);
+      translate: 0 98%;
+      bottom: 0;
       left: 0;
-
       clip-path: polygon(0 0, 0 100%, 90% 0);
     }
   }
@@ -136,8 +128,7 @@
     overflow: hidden;
     background-color: var(--1);
     translate: 0 rem(-2);
-    transition: background-color var(--transition-duration)
-      cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: background-color var(--transition-duration) ease-out;
 
     p {
       padding-inline: rem(50);
@@ -235,5 +226,11 @@
         padding-bottom: rem(11);
       }
     }
+  }
+}
+
+@include mobile {
+  .faq {
+    padding-bottom: rem(38);
   }
 }

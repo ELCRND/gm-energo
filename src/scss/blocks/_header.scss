@@ -33,12 +33,19 @@
   }
 
   &__logo {
-    @include flex-center;
-    width: rem(293);
-    height: rem(96);
     margin-right: auto;
-    padding: rem(20) rem(25);
-    background-color: var(--4);
+
+    &--desktop {
+      @include flex-center;
+      width: rem(293);
+      height: rem(96);
+      padding: rem(20) rem(25);
+      background-color: var(--4);
+    }
+
+    &--mobile {
+      display: none;
+    }
 
     picture {
       width: 100%;
@@ -244,10 +251,15 @@
     }
 
     &__logo {
-      width: rem(70);
-      height: rem(70);
-      padding: 0;
-      background-color: transparent;
+      &--desktop {
+        display: none;
+      }
+
+      &--mobile {
+        width: rem(70);
+        height: rem(70);
+        display: block;
+      }
     }
 
     &__menu {

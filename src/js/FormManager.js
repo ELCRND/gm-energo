@@ -48,6 +48,16 @@ export class FormManager {
       }
     }
 
+    // email validation
+    if (input.type === "email" && value !== "") {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(value)) {
+        field.classList.add("field--error");
+        field.classList.remove("field--correct");
+        return false;
+      }
+    }
+
     if (value !== "") {
       field.classList.add("field--correct");
     }
