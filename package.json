@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "convert:images": "node convert-images.js",
+    "convert:images-webp": "node convert-images.js ./public/images webp",
+    "convert:images-avif": "node convert-images.js ./public/images avif"
   },
   "devDependencies": {
     "@playwright/test": "^1.58.2",

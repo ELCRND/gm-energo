@@ -19,6 +19,7 @@ export class ContactsForm extends FormManager {
   }
 
   on() {
+    // переключение картинок
     this.TOGGLERS.forEach((toggler) => {
       toggler.addEventListener("change", (e) => {
         if (e.target.value === "moscow") {
