@@ -32,7 +32,7 @@
 
 
 КАК УЙТИ ОТ ИСПОЛЬЗОВАНИЯ vite.js
-    Первый вариант -
+    ➜➜➜ Первый вариант (вытаскиваем файлы вручную, потребуется отдельное подключение swiper js. Все файлы в первоначальном виде) -
         1. Забрать файлы из корня проекта, не из папки dist
             - index.html
             - собрать любым удобным способом scss в css(Плагины VsCode, сборка через vite js, онлайн инструменты)
@@ -56,3 +56,43 @@
                     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
                     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" async defer></script>
                 - удалить все импорты из Sliders.js и свойства modules (modules: [Autoplay, Pagination]).
+
+    ➜➜➜ Второй вариант (сборка с минимальными изменениями) -
+        1. Установить vite js
+        2. Заменить содержимое vite.config.js (ниже)
+        3. Не обязаельно, но если нужен css без всего, убрать файл postcss.config.js, можно переименовать в .txt
+        4. Запустить сборку __>>> npm run build <<<__
+    
+// vite.config.js
+import { defineConfig } from "vite";
+
+export default defineConfig({
+  build: {
+    minify: false,
+    cssMinify: false,
+
+    css: {
+      lightningcss: false,
+      postcss: false,
+    },
+
+    terserOptions: {
+      compress: false,
+      mangle: false,
+    },
+
+    rolldownOptions: {
+      output: {
+        codeSplitting: false,
+
+        entryFileNames: `assets/[name].js`,
+        chunkFileNames: `assets/[name].js`,
+        assetFileNames: `assets/[name].[ext]`,
+      },
+    },
+
+    sourcemap: false,
+
+    target: "esnext",
+  },
+});

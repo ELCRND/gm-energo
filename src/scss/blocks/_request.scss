@@ -276,7 +276,7 @@
 
 @include mobile {
   .request {
-    clip-path: polygon(100% 0, 100% 89.5%, 89.5% 100%, 0 100%, 0 0);
+    background-color: var(--8);
 
     &__image {
       width: 100%;
@@ -286,6 +286,8 @@
 
     &__container {
       padding: 0 var(--container-padding-x);
+      background-color: var(--4);
+      clip-path: polygon(100% 0, 100% 89.5%, 89.5% 100%, 0 100%, 0 0);
     }
 
     &__content {

@@ -65,6 +65,18 @@ a {
   outline: none;
 }
 
+@include tablet-above {
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  details:focus-visible {
+    outline: rem(4) dashed var(--3);
+    outline-offset: rem(4);
+    transition-duration: 0s !important;
+    // scale: 1.1;
+  }
+}
+
 img {
   width: 100%;
 }
